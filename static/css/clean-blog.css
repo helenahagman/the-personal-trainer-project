@@ -6,7 +6,7 @@
 
 body {
   font-size: 20px;
-  color: #212529;
+  color: darkslateblue;
   font-family: 'Lora', 'Times New Roman', serif;
 }
 
@@ -30,7 +30,7 @@ h6 {
 }
 
 a {
-  color: #212529;
+  color: darkslateblue;
   transition: all 0.2s;
 }
 
@@ -269,22 +269,22 @@ header.masthead .post-heading .meta a {
 }
 
 .post-preview > a {
-  color: #212529;
+  color: darkslateblue;
 }
 
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: darkslateblue;
 }
 
 .post-preview > a > .post-title {
-  font-size: 30px;
+  font-size: 20px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
 .post-preview > a > .post-subtitle {
-  font-weight: 300;
+  font-weight: 200;
   margin: 0 0 10px;
 }
 

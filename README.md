@@ -1,3 +1,7 @@
+
+added clean-blog theme from bootstrap following the walkthrough from the Codeinstitute in "Startbootstrap clean-blog URL change" section.
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome,
