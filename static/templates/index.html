@@ -22,15 +22,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto py-4 py-lg-0">
-              <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">About us</a></li>
-              <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="pt.html">Personal Trainer</a></li>
-              <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="member.html">Members</a></li>
+              <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('index.html') }}">About us</a></li>
+              <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('pt.html') }}">Personal Trainer</a></li>
+              <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('member.html') }}">Members</a></li>
           </ul>
       </div>
   </div>
 </nav>
 <!-- Page Header-->
-<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/pexels-lukas-669584.jpg') }}')">
+<header class="masthead" style="background-image: url('static/img/pexels-lukas-669584.jpg')">
   <div class="overlay"></div>
 		<div class="container">
 			<div class="row">

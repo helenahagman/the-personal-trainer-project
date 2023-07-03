@@ -1,5 +1,5 @@
 import os
-from flask import Flask 
+from flask import Flask, render_template 
 
 
 app = Flask(__name__)
@@ -7,7 +7,16 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "test"
+    return render_template("index.html")
+
+
+@app.route("/pt")
+def pt():
+    return render_template("pt.html")
+
+@app.route("/member")
+def member():
+    return render_template("member.html")
 
 
 if __name__ == "__main__":
