@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='static/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
     <title>The Health Club Project | Personal Trainer Sessions and Gym memberships </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
@@ -30,6 +30,7 @@
       </div>
   </div>
 </nav>
+
 <!-- Page Header-->
 <header class="masthead" style="background-image: url('static/img/pexels-lukas-669584.jpg')">
   <div class="overlay"></div>
@@ -37,13 +38,14 @@
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
 					<div class="site-heading">
-                  <h1>About The Project</h1>
-                  <span class="subheading">This is the Health Club with a purpose, we want you to be the best that you can be!</span>
+                  <h1>The Health Club Project</h1>
+                  <span class="subheading">This is the Health Club with a purpose. Be the best that you can be!</span>
               </div>
           </div>
       </div>
   </div>
 </header>
+
 <!-- Main Content-->
 <section>
     <div class="container px-4 px-lg-5">
@@ -63,6 +65,9 @@
         </div>
     </div>
 </section>
+
+{% block content%}
+{% endblock %}
   
 <!-- Footer-->
 <footer class="border-top">
@@ -105,5 +110,7 @@
 	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Core theme JS-->
 <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+<!-- font awesome script -->
+<script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
 </body>
 </html>

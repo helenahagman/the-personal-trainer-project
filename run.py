@@ -1,4 +1,5 @@
 import os
+import json
 from flask import Flask, render_template 
 
 
@@ -12,11 +13,11 @@ def index():
 
 @app.route("/pt")
 def pt():
-    return render_template("pt.html")
+    return render_template("pt.html", page_title="Personal Trainer")
 
 @app.route("/member")
 def member():
-    return render_template("member.html")
+    return render_template("member.html", page_title="Members")
 
 
 if __name__ == "__main__":
