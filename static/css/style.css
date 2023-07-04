@@ -1,11 +1,6 @@
 
+/* custom css*/
 
-
-
-#mainNav {
-    position: absolute;
-    border-bottom: 1px solid #e9ecef;
-    background-color: rgb(205, 200, 200);
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-
+.footer-text-color {
+  color: white;
+}
