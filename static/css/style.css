@@ -9,3 +9,7 @@
   text-align: center;
 }
 
+#menu a.current{
+  color: #080707;
+  background-color: rgb(214, 211, 211);
+}
