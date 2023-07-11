@@ -1,6 +1,87 @@
 
 added clean-blog theme from bootstrap following the walkthrough from the Codeinstitute in "Startbootstrap clean-blog URL change" section.
 
+Link to my wire frames: 
+https://miro.com/app/board/uXjVM94tSQs=/?share_link_id=555048984575
+
+thanks to DigitalOcean for help
+https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
+
+2 column template from MDBootstrap
+https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556
+
+
+strategy: 
+Strategy
+Target audiences that the website will focus on:
+Roles 
+-	Persons who want to get tips from a Personal Trainer
+-	Persons who are interested in gym exercise
+-	New users that are not yet registered
+-	Current users that are registered 
+Demographics
+-	Persons in the age over 18 years 
+
+Psychographics
+-	Persons who want to:
+o	Get in general shape
+o	Get stronger
+o	Loose weight
+o	Train for a specific goal (ex a competition)
+o	Increase their stamina
+-	Persons who are new to training in a gym
+-	Persons who want to get tips from a Personal Trainer
+
+
+User needs:
+-	Login/register
+-	See available personal trainer sessions
+-	Get information on what is offered on the site
+-	Book personal trainer sessions
+-	Sign up for membership
+-	Get in contact 
+-	Edit registered user information
+Client needs:
+-	Provide information about the company
+o	Memberships
+o	Personal Trainer
+o	Bookable sessions
+-	Administrator log in possibilities to:
+o	Communicate with users/customers that have questions
+o	Send emails/sms to registered users 
+o	See registered users
+o	See booked sessions
+
+Content Requirements
+The user will be looking for
+-	Images that contribute to what the site is offering
+-	Explanatory texts
+-	Registration possibilities
+-	Log in possibilities
+-	Log out possibilities
+-	Information on what is offered
+-	Contact the owner
+
+Functionality Requirements
+The user wants to be able to:			Priority:
+-	Register as new user				1	 
+-	Login as a current user			1
+-	Log out as a logged in user			1
+-	Possibility to choose custom username and password	2
+-	Easy navigation on the site			1
+-	Book available sessions			1
+-	Overview of services offered			2
+-	Get in contact				2
+-	Send customized messages to registered customers 	3
+-	Cancel a booked session online			3
+-	Manage customer database			1
+-	Retrieve customer info from registered users		1
+
+
+
+Structure map
+
+
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
