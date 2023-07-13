@@ -22,10 +22,10 @@ def member():
     active_page = 'member'
     return render_template("member.html", page_title="Members", active_page=active_page)
 
-@app.route("/book")
+@app.route("/pt/book")
 def book():
     active_page = 'book'
-    return render_template("book.html", page_title="Book", active_page=active_page)
+    return render_template("book.html", page_title="Book")
 
 
 if __name__ == "__main__":
