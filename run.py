@@ -22,6 +22,11 @@ def member():
     active_page = 'member'
     return render_template("member.html", page_title="Members", active_page=active_page)
 
+@app.route("/book")
+def book():
+    active_page = 'book'
+    return render_template("book.html", page_title="Book", active_page=active_page)
+
 
 if __name__ == "__main__":
     app.run(
