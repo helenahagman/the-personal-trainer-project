@@ -100,29 +100,8 @@
 <!-- font awesome script -->
 <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-    (function(){
-       emailjs.init("RO0elmR_iHiWZiyEO");
-       
-       document.getElementById("sendButton").addEventListener("click", function() {
-      var email = document.getElementById("form2Example1").value;
-      var message = document.getElementById("messageInput").value;
+<!-- Include the function.js file -->
+<script src="{{ url_for('static', filename='js/function.js') }}"></script>
 
-      var templateParams = {
-        to_email: email,
-        message: message
-      };
-
-       emailjs.send('service_b8gz1av', 'template_8j0ugds', templateParams)
-     .then(function(response) {
-        console.log("SUCCESS!", response.status, response.text);
-          alert("Email sent successfully!");
-        }, function(error) {
-          console.log("FAILED...", error);
-          alert("Failed to send email. Please try again later.");
-        });
-       });
-    })();
- </script>
 </body>
 </html>

@@ -10,6 +10,9 @@ https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-u
 2 column template from MDBootstrap
 https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556
 
+Message API connection to:
+https://www.emailjs.com/
+
 
 strategy: 
 Strategy
