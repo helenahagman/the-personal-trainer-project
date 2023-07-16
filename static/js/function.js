@@ -1,16 +1,14 @@
 (function() {
-    emailjs.init("YOUR_USER_ID");
-  
     document.getElementById("sendButton").addEventListener("click", function() {
       var email = document.getElementById("form2Example1").value;
       var message = document.getElementById("messageInput").value;
   
       var templateParams = {
-        to_email: email,
+        email: email,
         message: message
       };
   
-      emailjs.send("'service_b8gz1av", "template_8j0ugds", templateParams)
+      emailjs.send("service_b8gz1av", "template_8j0ugds", templateParams, "RO0elmR_iHiWZiyEO")
         .then(function(response) {
           console.log("SUCCESS!", response.status, response.text);
           alert("Email sent successfully!");
