@@ -11,10 +11,10 @@
       emailjs.send("service_b8gz1av", "template_8j0ugds", templateParams, "RO0elmR_iHiWZiyEO")
         .then(function(response) {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Email sent successfully!");
+          alert("Thank you! Your message was sent successfully!");
         }, function(error) {
           console.log("FAILED...", error);
-          alert("Failed to send email. Please try again later.");
+          alert("Oops something went wrong, check your email and try again.");
         });
     });
   
@@ -26,7 +26,7 @@
   
       // Redirect to the user.html page if authentication is successful
       if (authenticationSuccessful) {
-        window.location.href = "user.html";
+        window.location.href = "profile-page.html";
       } else {
         alert("Authentication failed. Please check your credentials.");
       }
