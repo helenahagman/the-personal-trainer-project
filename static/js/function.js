@@ -26,7 +26,7 @@
   
       // Redirect to the user.html page if authentication is successful
       if (authenticationSuccessful) {
-        window.location.href = "profile-page.html";
+        window.location.href = "/templates/profile-page.html";
       } else {
         alert("Authentication failed. Please check your credentials.");
       }
