@@ -1,107 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
+        type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Link to the style.css file -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>The Health Club Project | Personal Trainer Sessions and Gym memberships </title>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
 </head>
 
 <body>
- 
- <!-- Navigation-->
- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="z-index: 9999;">
-   <div class="container px-4 px-lg-5 navbar-collapse">
-      <a class="navbar-brand w-100" href="{{ url_for('index') }}">The Health Club Project</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto py-4 py-lg-0 ml-lg-0" id="menu" >
-              <li class="nav-item {% if active_page == 'about' %}active{% endif %}"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('index') }}">About us</a></li>
-              <li class="nav-item {% if active_page == 'trainer' %}active{% endif %}"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('pt') }}">Personal Trainer</a></li>
-              <li class="nav-item {% if active_page == 'members' %}active{% endif %}"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('member') }}">Members</a></li>
-          </ul>
-      </div>
-  </div>
-</nav>
 
-<!-- Page Header-->
-<header class="masthead" style="background-image: url('static/img/pexels-lukas-669584.jpg'); position: relative; z-index: -1;">
-  <div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<div class="site-heading">
-                  <h1>The Health Club Project</h1>
-                  <span class="subheading">This is the Health Club with a purpose. Be the best that you can be!</span>
-              </div>
-          </div>
-      </div>
-  </div>
-</header>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="z-index: 9999;">
+        <div class="container px-4 px-lg-5 navbar-collapse">
+            <a class="navbar-brand w-100" href="{{ url_for('index') }}">The Health Club Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto py-4 py-lg-0 ml-lg-0" id="menu">
+                    <li class="nav-item {% if active_page == 'about' %}active{% endif %}"><a
+                            class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('index') }}">About us</a></li>
+                    <li class="nav-item {% if active_page == 'trainer' %}active{% endif %}"><a
+                            class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('pt') }}">Personal Trainer</a></li>
+                    <li class="nav-item {% if active_page == 'members' %}active{% endif %}"><a
+                            class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('member') }}">Members</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header-->
+    <header class="masthead"
+        style="background-image: url('static/img/pexels-lukas-669584.jpg'); position: relative; z-index: -1;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>The Health Club Project</h1>
+                        <span class="subheading">The Health Club that want's you to be the best that you can be!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
 
-<!-- Main Content-->
-<div class="container">
+    <!-- Main Content-->
+    <div class="container">
 
-{% block content%}
-{% endblock %}
+        {% block content%}
+        {% endblock %}
 
-</div>
+    </div>
 
-<hr>
+    <hr>
 
-<!-- Footer-->
-<footer style="background-color: rgb(124, 130, 133);" class="border-top">
-  <div class="container px-4 px-lg-5">
-      <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-              <ul class="list-inline text-center">
-                  <li class="list-inline-item">
-                      <a href="#!">
-                          <span class="fa-stack fa-lg">
-                              <i class="fas fa-circle fa-stack-2x"></i>
-                              <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                          </span>
-                      </a>
-                  </li>
-                  <li class="list-inline-item">
-                      <a href="#!">
-                          <span class="fa-stack fa-lg">
-                              <i class="fas fa-circle fa-stack-2x"></i>
-                              <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                          </span>
-                      </a>
-                  </li>
-              </ul>
-              <br>
-              <div class="small text-center footer-text-color fst-italic">Copyright &copy; The Health Club Project. <br> The website is only intended for educational purposes and was created as the 4th project for the Code Institute. 2023</div>
-          </div>
-      </div>
-  </div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <!-- Footer-->
+    <footer style="background-color: rgb(124, 130, 133);" class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <br>
+                    <div class="small text-center footer-text-color fst-italic">Copyright &copy; The Health Club
+                        Project. <br> The website is only intended for educational purposes and was created as the 4th
+                        project for the Code Institute. 2023</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
 
-<!-- Core theme JS-->
-<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
-<!-- font awesome script -->
-<script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
 
-<!-- Include the function.js file -->
-<script src="{{ url_for('static', filename='js/function.js') }}"></script>
+    <!-- Include the function.js file -->
+    <script src="{{ url_for('static', filename='js/function.js') }}"></script>
 
 </body>
+
 </html>
