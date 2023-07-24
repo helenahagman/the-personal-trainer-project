@@ -21,7 +21,7 @@ def pt():
 
 @app.route("/member")
 def member():
-    active_page = 'member'
+    active_page = 'members'
     return render_template("member.html", page_title="Members",
                            active_page=active_page)
 
