@@ -6,73 +6,78 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-6">
-                <div class="p-5"><img class="img-fluid" src="static/img/pexels-victor-freitas-703014.jpg" alt="..." /></div>
+                <div class="p-5"><img class="img-fluid" src="static/img/pexels-victor-freitas-703014.jpg" alt="..." />
                 </div>
-                <div class="col-lg-6">
-                    <div class="p-5">
-                        <h3 class="display-4">Together!</h3>
-                        <h5 class="post-subtitle">We want You to be the very best version of Your self and together we can make it happen. 
-                          We will help you acheive the goals that you want to reach. Your goal will be our goal and we will be ther every step of the way. 
-                          Book your Personal Trainer session today and get started on your journey!</h5>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <h3 class="display-4">Together!</h3>
+                    <h5 class="post-subtitle">We want You to be the very best version of Your self and together we can
+                        make it happen.
+                        We will help you acheive the goals that you want to reach. Your goal will be our goal and we
+                        will be ther every step of the way.
+                        Book your Personal Trainer session today and get started on your journey!</h5>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <main class="mb-4">
-  <div class="container px-4 px-lg-5">
-      <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-              <h5 class="post-subtitle" >Not everyone want to be slim as a swimsuite model or bulky as a body builder, 
-                but if you do we can help you with that to. Social media is making us believe that the perfect body exists, 
-                well we actually think it does, it just doesn't look the same for all of us. 
-                We want You to feel good in the body that God gave you but sometimes we need help in the right direction, 
-                that's what we are here for. We will help you on your journey to feel better inside and out.</h5>
-          </div>
-      </div>
-  </div>
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h5 class="post-subtitle">Not everyone want to be slim as a swimsuite model or bulky as a body builder,
+                    but if you do we can help you with that to. Social media is making us believe that the perfect body
+                    exists,
+                    well we actually think it does, it just doesn't look the same for all of us.
+                    We want You to feel good in the body that God gave you but sometimes we need help in the right
+                    direction,
+                    that's what we are here for. We will help you on your journey to feel better inside and out.</h5>
+            </div>
+        </div>
+    </div>
 </main>
 
 <!--Postcard layout by MDBootstrap-->
 <main class="my-5">
     <div class="container">
         <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="static/img/pexels-victor-freitas-841130.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Personal Trainer</h5>
-                <p class="card-text">
-                  Book sessions with a personal trainer dedicated to helping you reach your goals.
-                </p>
-                <a href="{{ url_for('pt') }}" class="btn btn-primary">Book Session</a>
-              </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <img src="static/img/pexels-victor-freitas-841130.jpg" class="img-fluid" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Personal Trainer</h5>
+                        <p class="card-text">
+                            Book sessions with a personal trainer dedicated to helping you reach your goals.
+                        </p>
+                        <a href="{{ url_for('pt') }}" class="btn btn-primary">Book Session</a>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="col-lg-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="static/img/pexels-victor-freitas-703016.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Members</h5>
-                <p class="card-text">
-                  Become a member today to receive the lates news, offers and much more.
-                </p>
-                <a href="{{ url_for('member') }}" class="btn btn-primary">Sign in/Register</a>
-              </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <img src="static/img/pexels-victor-freitas-703016.jpg" class="img-fluid" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Members</h5>
+                        <p class="card-text">
+                            Become a member today to receive the lates news, offers and much more.
+                        </p>
+                        <a href="{{ url_for('member') }}" class="btn btn-primary">Sign in / Register</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-    </section>
+        </section>
 
-    {% endblock %}
+        {% endblock %}
