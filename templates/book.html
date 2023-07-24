@@ -1,48 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
-    
+
 <!-- Main Content-->
 <section>
-  <div class="container px-4 px-lg-5">
-      <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="/static/img/pexels-bich-tran-669986.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Search for Available Sessions</h5>
-                <form>
-                  <br>
-                  <!-- Date input -->
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example2">Date</label>
-                    <input type="date" id="form2Example2" class="form-control" />
-                  </div>
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <img src="/static/img/pexels-bich-tran-669986.jpg" class="img-fluid" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Search for Available Sessions</h5>
+                        <form>
+                            <br>
+                            <!-- Date input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form2Example2">Date</label>
+                                <input type="date" id="form2Example2" class="form-control" />
+                            </div>
 
-                  <!-- Time input with options -->
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form2Example2">Time</label>
-                  <input type="time" id="form2Example2" class="form-control" list="timeOptions" />
-                  <datalist id="timeOptions">
-                    <option value="12:00"></option>
-                    <option value="13:00"></option>
-                    <option value="14:00"></option>
-                    <option value="15:00"></option>
-                    <option value="16:00"></option>
-                    <option value="17:00"></option>
-                    <option value="18:00"></option>
-                  </datalist>
+                            <!-- Time input with options -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form2Example2">Time</label>
+                                <input type="time" id="form2Example2" class="form-control" list="timeOptions" />
+                                <datalist id="timeOptions">
+                                    <option value="12:00"></option>
+                                    <option value="13:00"></option>
+                                    <option value="14:00"></option>
+                                    <option value="15:00"></option>
+                                    <option value="16:00"></option>
+                                    <option value="17:00"></option>
+                                    <option value="18:00"></option>
+                                </datalist>
+                            </div>
+                            <!-- Submit button -->
+                            <div class="text-center">
+                                <button id="sendButton" type="button" class="btn btn-primary"
+                                    style="width: 30%">Book</button>
+                            </div>
+                    </div>
+                    </form>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
-  </div>
+    </div>
 </section>
 
 
