@@ -33,6 +33,12 @@ def book():
                            active_page=active_page)
 
 
+@app.route("/register")
+def register():
+    active_page = 'register'
+    return render_template("register.html", page_title="Register", active_page=active_page)
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
