@@ -31,8 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-helenahagman-the-persona-fweir8to7s.us2.codeanyapp.com',
-    '8000-helenahagman-the-persona-qkla4bt0yv.us2.codeanyapp.com',
+    '8000-helenahagman-the-persona-0go77tb0ie.us2.codeanyapp.com',
     'ptproject.herokuapp.com',
     'ptproject-ec6a8ad157bf.herokuapp.com',
     'localhost',
