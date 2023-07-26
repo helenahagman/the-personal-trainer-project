@@ -32,9 +32,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-helenahagman-the-persona-fweir8to7s.us2.codeanyapp.com',
+    '8000-helenahagman-the-persona-qkla4bt0yv.us2.codeanyapp.com',
     'ptproject.herokuapp.com',
     'ptproject-ec6a8ad157bf.herokuapp.com',
-    'localhost'
+    'localhost',
 ]
 
 
@@ -137,12 +138,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
