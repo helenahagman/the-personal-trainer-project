@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
-from .models import BookingForm
+from django import forms
+from .forms import BookingForm
+from .models import BookingSession
 
 
 class Home(generic.TemplateView):
-    #Opens start page
+    # Opens start page
     template_name = "index.html"
 
 
@@ -18,8 +20,20 @@ class Member(generic.TemplateView):
     template_name = "member.html"
 
 
-class BookingSession(models.Model):
-    model = BookingForm
-    template_name = 'book.html'
-    date = models.DateField()
-    time = models.TimeField()
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = BookingSession
+        fields = ['name', 'email', 'date', 'time']
+
+
+def book_session(request):
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect to success page
+            return redirect('success')
+    else:
+        form = BookingForm()
+
+    return render(request, 'book.html', {'form': form})
