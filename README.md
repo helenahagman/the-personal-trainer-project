@@ -183,6 +183,52 @@ I wanted to build a good looking website where the functionality for online book
 </ul></p>
 
 
+<h2>Technology</h2>
+
+<h3>Frameworks, Libraries & Programs Used</h3>
+<ul>
+  <li>HTML, CSS, JavaScript</li>
+  <li>Django, Flask</li>
+  <li>GitHub - save & store website files</li>
+  <li>CodeAnywhere - codespace</li>
+  <li>Bootstrap - framework</li>
+  <li>Favicon - icons</li>
+  <li>ElephantSQL - database</li>
+  <li>Heroku - deployment</li>
+  <li>EmailJS - contact</li>
+  <li>Trello - KANBAN Board</li>
+  <li>Miro - wireframes</li>
+  <li>Pexels - images</li>
+  <li></li>
+  
+
+</ul>
+
+<h2>Testing</h2>
+<ul>
+<h3>W3C Validator</h3>
+<h3>Bugs</h3>
+<h3>Testing User Stories</h3>
+<h3>Lighthouse</h3>
+  <ul>
+<h3>Index Page</h3>
+<h3>Personal Trainer Page</h3>
+<h3>Member Page</h3>
+<h3>Testing features and functions</h3></ul>
+</ul>
+
+<h4>Deployment</h4>
+<ul>
+<li>Deployment</li>
+</ul>
+
+<h4>Credits</h4>
+<ul>
+<li>Code Used</li>
+<li>Images</li>
+<li>Acknowledgments</li>
+
+</ul>
   
   I followed the walkthrough projects included in the course and had them as base when building and deploying my project.</p><br>
 
