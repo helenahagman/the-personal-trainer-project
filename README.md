@@ -134,7 +134,7 @@ I wanted to build a good looking website where the functionality for online book
 </ul>
 
 <h3>Link to KANBAN Board with User Stories on Trello:</h3>
-<a href=”https://trello.com/b/yxkUuMp3/kanban-board” >Trello KANBAN Board</a>
+<a href="https://trello.com/b/yxkUuMp3/kanban-board">Trello KANBAN Board</a>
 
 
 
