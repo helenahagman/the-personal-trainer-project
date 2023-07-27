@@ -171,6 +171,7 @@ I wanted to build a good looking website where the functionality for online book
   <li>Short descriptive information along with an image, below that two postcards with link to the contact form and the login and register form</li>
 </ul>
 
+
 <h3>Accessability</h3>
 <p>Throughout the process of building the website I have tried to think of the accessibility to make it as user friendly as possible. I have used the best of my knowledge to:
 <ul>
@@ -200,21 +201,71 @@ I wanted to build a good looking website where the functionality for online book
   <li>Miro - wireframes</li>
   <li>Pexels - images</li>
   <li></li>
-  
-
 </ul>
 
 <h2>Testing</h2>
+<p>Testing features, accessibility, links, responsiveness have been done throughout the project and after every step of the way tests have been performed to make sure that the new inserts has been working correctly and corrected thereafter.</p>
 <ul>
 <h3>W3C Validator</h3>
-<h3>Bugs</h3>
-<h3>Testing User Stories</h3>
+<a href=""></a>
 <h3>Lighthouse</h3>
-  <ul>
+<a href=""></a>
+<h3>Bugs</h3>
+<table style="width:100%">
+  <tr>
+    <th>Bug</th>
+    <th>Expected Outcome</th>
+    <th>Test Performed</th>
+    <th>Result</th>
+    <th>Pass/Fail</th>
+  </tr>
+<tr>
+    <td>Push Run program button</td>
+    <td>Welcome message should appear along with rules of the game and a message that askes the player to enter a name</td>
+    <td>Press "RUN PROGRAM" button</td>    
+    <td>Welcome message, game rules and the question for the user to enter a name was displayed</td>
+    <td>Pass</td>
+</tr>
+<h3>Testing User Stories</h3>
+<table style="width:100%">
+  <tr>
+    <th>User Story</th>
+    <th>Expected Outcome</th>
+    <th>Test Performed</th>
+    <th>Result</th>
+    <th>Pass/Fail</th>
+  </tr>
+<tr>
+    <td>Push Run program button</td>
+    <td>Welcome message should appear along with rules of the game and a message that askes the player to enter a name</td>
+    <td>Press "RUN PROGRAM" button</td>    
+    <td>Welcome message, game rules and the question for the user to enter a name was displayed</td>
+    <td>Pass</td>
+</tr>
+<ul>
 <h3>Index Page</h3>
+  
 <h3>Personal Trainer Page</h3>
+
 <h3>Member Page</h3>
-<h3>Testing features and functions</h3></ul>
+
+<h3>Testing features and functions</h3>
+<table style="width:100%">
+  <tr>
+    <th>Feature/function</th>
+    <th>Expected Outcome</th>
+    <th>Test Performed</th>
+    <th>Result</th>
+    <th>Pass/Fail</th>
+  </tr>
+<tr>
+    <td>Push Run program button</td>
+    <td>Welcome message should appear along with rules of the game and a message that askes the player to enter a name</td>
+    <td>Press "RUN PROGRAM" button</td>    
+    <td>Welcome message, game rules and the question for the user to enter a name was displayed</td>
+    <td>Pass</td>
+</tr>
+</ul>
 </ul>
 
 <h4>Deployment</h4>
@@ -329,20 +380,7 @@ I wanted to build a good looking website where the functionality for online book
     <td>Message: Tie! Nobody wins. Play again? Print Y for yes or N to quit: was presented as expected</td>
     <td>Pass</td>
 </tr>
-<tr>
-    <td>Y to restart the game</td>
-    <td>The game restarts and wishes the user good luck along with an empty game board</td>
-    <td>Printed "Y"</td>
-    <td>Message: Miles, good luck! was printed as expected with the empty game board to start playing again.</td>
-    <td>Pass</td>
-</tr>
-<tr>
-    <td>N to not restart the game</td> 
-    <td>Should be presented with a short message "Ok, see you later!" when choosing N and also a play again question</td>
-    <td>Printed "N"</td>
-    <td>Message: Ok, see you later! Play again? Print Y for yes and N to quit: was presented as expected.</td>
-    <td>Pass</td>
-</tr>
+
 </table>
 </li>
 <br> 
