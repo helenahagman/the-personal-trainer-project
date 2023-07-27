@@ -40,8 +40,15 @@
 
 <h4>Deployment</h4>
 <ul>
-<li>Deployment</li>
+<li>Deployment to Heroku:</li>
+<ol> <li>Click on Account Settings</li>
+<li>Copy the API key.</li>
+<li>Enter the command: heroku_config , and enter the API key</li>
+<li>Enter your heroku username</li>
+<li>Enter the API key</li>
+</ol>
 </ul>
+
 
 <h4>Credits</h4>
 <ul>
@@ -269,9 +276,14 @@ I wanted to build a good looking website where the functionality for online book
 </ul>
 
 <h4>Deployment</h4>
-<ul>
-<li>Deployment</li>
-</ul>
+<a>Deployment to heroku</a>
+<ol>
+<li>Account settings</li>
+<li>Copy the API key</li>
+<li>Enter the command: heroku_config , and enter the API key</li>
+<li>Enter heroku username</li>
+<li>Enter the API key</li>
+</ol>
 
 <h4>Credits</h4>
 <ul>
