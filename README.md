@@ -1,5 +1,5 @@
 <h1>The Personal Trainer Project</h1>
-#<p><img src=" amiresponsive.JPG" alt="Am I Responsive"></li></p>
+<p><img src=" amiresponsive.JPG" alt="Am I Responsive"></li></p>
 
 <h4 href=”https://github.com/helenahagman/the-personal-trainer-project/tree/main” > View The Personal Trainer Project on Github Pages </h3>
 
@@ -313,89 +313,6 @@ I wanted to build a good looking website where the functionality for online book
 </a></li>
 <br>
 
-<h3>Final testing of the code in the live app</h3>
-
-<table style="width:100%">
-  <tr>
-    <th>Feature</th>
-    <th>Expected Outcome</th>
-    <th>Test Performed</th>
-    <th>Result</th>
-    <th>Pass/Fail</th>
-  </tr>
-<tr>
-    <td>Push Run program button</td>
-    <td>Welcome message should appear along with rules of the game and a message that askes the player to enter a name</td>
-    <td>Press "RUN PROGRAM" button</td>    
-    <td>Welcome message, game rules and the question for the user to enter a name was displayed</td>
-    <td>Pass</td>
-</tr>
-<tr>    
-    <td>Enter correct name in alphabetic letters</td>
-    <td>Name should appear along with a message to start the game</td>
-    <td>Entered "Miles"</td>
-    <td>Name was printed as expected along with a blank game board</td>
-    <td>Pass</td>
-</tr>
-<tr>
-<tr>
-    <td>Enter numbers instead of letters</td>
-    <td>Error message should appear and ask the user to use alphabetic letters</td>
-    <td>Entered "5"</td>
-    <td>Message that only alphabetic letters are accepted was presented to the user</td>
-    <td>Pass</td>
-</tr>
-<tr>
-    <td>Enter number to make a move</td>
-    <td>Game should start and position should be marked with X on the board</td>
-    <td>Entered "6"</td>
-    <td>X was printed to the correct position on the board, computer move on the board and a message to enter a new number</td>
-    <td>Pass</td>
-</tr>
-<tr>
-    <td>Enter letter to make a move</td>
-    <td>Error message should appear and ask the user to enter a number between 1 and 9</td>
-    <td>Entered "g"</td>
-    <td>Message shown: Try again, a number between 1 and 9: just as expected</td>
-    <td>Pass</td>
-</tr>
-<tr>
-    <td>Player wins the game</td>
-    <td>A message with the players name should be presented along with the information that he/she won and the question to play again or not</td>
-    <td>Won the game</td>
-    <td>The message: The winner is Miles! Play again? Print Y for yes or N to quit. was presented as expected</td>
-    <td>Pass</td>
-</tr>
-<tr>
-    <td>Computer wins the game</td>
-    <td>A message stating that the computer wins should appear and the question to play again.</td>
-    <td>Played until the computer won</td>
-    <td>Message: Tuff luck, computer wins! was presented along with the play again question as expected.</td>
-    <td>Pass</td>
-</tr>
-<tr>
-    <td>Full board - no winner</td>
-    <td>A message that the game ends in a tie and nobody won along with a question to play again</td>
-    <td>Played to a full board with no winner</td>
-    <td>Message: Tie! Nobody wins. Play again? Print Y for yes or N to quit: was presented as expected</td>
-    <td>Pass</td>
-</tr>
-
-</table>
-</li>
-<br> 
-<h3>Bugs and errors</h3>
-<br>
-<p>During the creating process of this game a lot of the work have been trying to fix minor bugs and errors to make the game work the way I intended it to.</p>
-<p>A few fixes along the way:
-<li>Display of the empty game board - tried several ways of displaying the board</li>
-<li>Name of the player didn't display efter entering the name</li>
-<li>No error message when player entered a number in the name feild - added isalpha in the player_name function</li>
-<li>The board didn't update the player move on the board - was missing position input</li>
-<li>The game didn'r restart when Y was entered - fixed in the start_game function</li>
-<li>When a player chose to play again they were told to add a new name - fixed in the start_game funciton</li>
-<br>
-</p>
  <h3>Known unsolved bugs</h3>
 <br>
 <li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>
@@ -415,13 +332,6 @@ I wanted to build a good looking website where the functionality for online book
 <p>Used for inspiration and tips on how to build the program</p></li>
 <li><a href="https://github.com/Kieran132/TicTacToe-project3/blob/main/run.py">Fellow student Kieran</a><br>
 <p>For ideas on how to present the project</p></li>
-<li><a href="https://github.com/kera-cudmore/readme-examples">Kera Cudmore, readme examples</a><br>
-<p>For inspiration on how to build the readme file and content to add.</p></li>
-<li><a href="https://github.com/kera-cudmore/TheQuizArms/blob/main/TESTING.md#Full-Testing">Kera Cudmore, readme examples</a><br>
-<p>For inspiration on how to display the testing with tables</p></li>
-<li><a href="https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial">Lucidchart</a></li>
-<p>To make the chart for the thinking-process of the project</p>
-
 <li><a href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a></li>
 <p>Problem solvning</p>
 <li><a href="https://www.python.org/about/help/">Pyhton.org</a></li>
