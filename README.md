@@ -1,5 +1,5 @@
 <h1>The Personal Trainer Project</h1>
-<p><img src=" amiresponsive.JPG" alt="Am I Responsive"></li></p>
+<p><img src=" amiresponsive.JPG" alt="Am I Responsive"></li></p> #add link 
 
 <h4 href=”https://github.com/helenahagman/the-personal-trainer-project/tree/main” > View The Personal Trainer Project on Github Pages </h3>
 
@@ -333,25 +333,13 @@ I wanted to build a good looking website where the functionality for online book
 <li>Acknowledgments</li>
 
 </ul>
-  
-  I followed the walkthrough projects included in the course and had them as base when building and deploying my project.</p><br>
 
 
 
 --------------------------------------------------
 
-<h2>Deployment</h2>
-<p>Deployment was done following the steps in the walk through project, Love Sandwiches:
-<li>Checking the code for input variables and add \n to those lines</li>
-<li>pip3 freeze > requirements.txt</li>
-<li>Add and push code to github</li>
-<li>Build new app in Heroku</li>
-<li>Build packs: heroku/python and heroku/nodejs</li>
-<li>Connect to Github repository code</li>
-<li>Enabled automatic deploys for the app</li>
-<li>*Successfully built in Heroku*</li>
-</p>
-<br>
+
+#update list when tested
 
 <h2>Testing</h2>
 
@@ -366,7 +354,7 @@ I wanted to build a good looking website where the functionality for online book
 </a></li>
 <br>
 
- <h3>Known unsolved bugs</h3>
+ <h3>Known unsolved bugs</h3>  #update
 <br>
 <li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>
 <p>Used for testing the code for syntax errors - 1 Syntax error detected.</p>
@@ -376,7 +364,7 @@ I wanted to build a good looking website where the functionality for online book
 
 
 
-<h3>Credits & Inspiration</h3>
+<h3>Credits & Inspiration</h3>  #update
 
 <p>Sites and code used for inspiration and test on this project:</p>
 <li><a href="https://www.programiz.com/python-programming/online-compiler/">Online Python Compiler</a><br>
@@ -389,73 +377,23 @@ I wanted to build a good looking website where the functionality for online book
 <p>Problem solvning</p>
 <li><a href="https://www.python.org/about/help/">Pyhton.org</a></li>
 <p>Problem solvning</p>
-<li><a href="https://www.youtube.com/watch?v=eWRfhZUzrAc">Pyhton for beginners</a></li>
-<p>Problem solvning and idéas</p>
+
+<li><a href="https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556">Bootstrap</a></li>
+<p>2 column template from MDBootstrap</p>
+<li><a href="https://www.emailjs.com/">EmailJS</a></li>
+<p>API connection for messages</p>
+<li><a href="https://www.digitalocean.com">DigitalOcean</a></li>
+<p>Problem solving and ideas</p>
 <br>
+<p>I used the walkthrough in the Codeinstitute section "Startbootstrap clean-blog URL change" to add the clean-blog theme from bootstrap to style my pages.</p>
 <p>A special thank you to my mentor Jubril Akolade for useful tips and support on the way</p>
-<p>Also thank you to The Code Institute for material and deployment terminal</p>
+<p>Thank you to The Code Institute for material, instructions and connection to the community in Slack</p>
 
 
 
-
-
-
-added clean-blog theme from bootstrap following the walkthrough from the Codeinstitute in "Startbootstrap clean-blog URL change" section.
-
-
-thanks to DigitalOcean for help
-https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
-
-2 column template from MDBootstrap
-https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556
-
-Message API connection to:
-https://www.emailjs.com/
 
 
 
 
 
 Structure map
-
-
-
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
-
-## Codeanywhere Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
-
-`python3 -m http.server`
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
