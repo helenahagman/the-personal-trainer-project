@@ -10,14 +10,29 @@ class Home(generic.TemplateView):
     template_name = "index.html"
 
 
-class pt(generic.TemplateView):
+class PersonalTrainer(generic.TemplateView):
     # Opens personal trainer page
-    template_name = "pt.html"
+    template_name = "personaltrainer.html"
 
 
 class Member(generic.TemplateView):
     # Opens member page
     template_name = "member.html"
+
+
+class Book(generic.TemplateView):
+    # Opens member page
+    template_name = "book.html"
+
+
+class Profile(generic.TemplateView):
+    # Opens member page
+    template_name = "profile.html"
+
+
+class Register(generic.TemplateView):
+    # Opens member page
+    template_name = "register.html"
 
 
 class BookingForm(forms.ModelForm):
