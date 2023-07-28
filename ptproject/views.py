@@ -52,3 +52,7 @@ def book_session(request):
         form = BookingForm()
 
     return render(request, 'book.html', {'form': form})
+
+
+def register_view(request):
+    return render(request, 'register_template.html')
