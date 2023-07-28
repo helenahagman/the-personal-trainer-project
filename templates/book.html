@@ -8,14 +8,16 @@
             <div class="col-lg-6 mb-4">
                 <div class="card">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="{% static 'img/pexels-bich-tran-669986.jpg' %}" class="img-fluid" />
+                        <img src="/static/img/pexels-bich-tran-669986.jpg" class="img-fluid" />
                         <a href="#!">
                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                         </a>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Search for Available Sessions</h5>
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
                             <br>
                             <!-- Date input -->
                             <div class="form-outline mb-4">

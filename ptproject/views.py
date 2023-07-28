@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
-from django import forms
 from .forms import BookingForm
 from .models import BookingSession
 
@@ -21,24 +20,24 @@ class Member(generic.TemplateView):
 
 
 class Book(generic.TemplateView):
-    # Opens member page
+    # Opens book page
     template_name = "book.html"
 
 
 class Profile(generic.TemplateView):
-    # Opens member page
+    # Opens profile page
     template_name = "profile.html"
 
 
 class Register(generic.TemplateView):
-    # Opens member page
+    # Opens register page
     template_name = "register.html"
 
 
-class BookingForm(forms.ModelForm):
-    class Meta:
-        model = BookingSession
-        fields = ['name', 'email', 'date', 'time']
+# class BookingForm(forms.ModelForm):
+#    class Meta:
+#        model = BookingSession
+#        fields = ['name', 'email', 'date', 'time']
 
 
 def book_session(request):

@@ -10,5 +10,5 @@ urlpatterns = [
     path("booking/", views.book_session, name="book_session"),
     path("register/", views.Register, name="register"),
     path("profile/", views.Profile, name="profile"),
-    path("book/", views.Book, name="book"),
+    path('book/', views.Book.as_view(), name='book'),
 ]
