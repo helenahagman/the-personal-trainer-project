@@ -275,6 +275,47 @@ I wanted to build a good looking website where the functionality for online book
 </ul>
 </ul>
 
+<h3>Error handling</h3>
+<table style="width:100%">
+  <tr>
+    <th>Error</th>
+    <th>Description</th>
+    <th>Handling</th>
+    <th>Result</th>
+  </tr>
+<tr>
+    <td>Pages not loadning</td>
+    <td>Indention and syntax errors</td>
+    <td>Updated models.py, admin.py and views.py</td>
+    <td>Pages loadning as expected</td>
+  </tr>
+<tr>
+    <td>Links in header not working</td>
+    <td>404</td>
+    <td>Updated urlpatterns</td>
+    <td>Links now work as expected</td>
+  </tr>
+<tr>
+    <td>Images not loadning on member.html</td>
+    <td>Error at line 33 in template member.html</td>
+    <td>Corrected src on line 33</td>
+    <td>Images loading as expected</td>
+  </tr>
+<tr>
+    <td>Header image only showing on index.html page</td>
+    <td>Inheritance error</td>
+    <td>Corrected template tag for img</td>
+    <td>Header image now showning on all pages</td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</ul>
+</ul>
+
 <h4>Deployment</h4>
 <a>Deployment to heroku</a>
 <ol>
