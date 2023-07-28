@@ -6,13 +6,7 @@ from django.core.validators import MinValueValidator
 class BookingSession(models.Model):
     name = models.CharField(max_length=80, default='Name', blank=False)
     email = models.EmailField(default='example@example.com', blank=False)
-    age = models.IntegerField(
-        default='18',
-        blank=False,
-        validators=[
-            MinValueValidator(18)
-        ]
-    )
+    age = models.CharField(max_length=20, default='min18years', blank=False)
     date = models.DateField()
     time = models.TimeField()
 
