@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
-from .forms import BookingForm, RegistrationForm
+from .forms import BookingForm, RegisterForm
 from .models import BookingSession
 
 
@@ -70,3 +70,15 @@ def register_view(request):
         form = RegistrationForm()
 
     return render(request, 'register_template.html', {'form': form})
+
+
+@login_required
+def delete_booking(request, id):
+    """
+    To be able to delete/cancel a booking the user needs to be loged in
+    """
+    booking = get_object_or_404(BookingSession, user=request.user, pk=id)
+    if request.method == 'POST':
+        booking.delete()
+    message.success(request, 'The booking was canceled')
+    return redirect('user_profile')

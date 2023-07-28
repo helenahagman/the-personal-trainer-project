@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load custom_filters %}
 
 <!-- Main Content-->
 <section>
@@ -21,12 +22,22 @@
                             <br>
                             <!-- Date input -->
                             <div class="form-outline mb-4">
+                                <label class="form-label" for="{{ form.date.id_for_label }}">Date</label>
+                                {% with form.date|add_class:"form-control" %}
+                                {{ form.date.as_widget }}
+                                {% endwith %}
+                            </div>
+                            <!--<div class="form-outline mb-4">
                                 <label class="form-label" for="dateInput">Date</label>
                                 <input type="date" id="dateInput" class="form-control" />
-                            </div>
+                            </div>-->
 
                             <!-- Time input with options -->
                             <div class="form-outline mb-4">
+                                <label class="form-label" for="{{ form.time.id_for_label }}">Time</label>
+                                {{ form.time }}
+                            </div>
+                            <!--<div class="form-outline mb-4">
                                 <label class="form-label" for="timeInput">Time</label>
                                 <input type="time" id="timeInput" class="form-control" list="timeOptions" />
                                 <datalist id="timeOptions">
@@ -38,10 +49,10 @@
                                     <option value="17:00"></option>
                                     <option value="18:00"></option>
                                 </datalist>
-                            </div>
+                            </div>-->
                             <!-- Submit button -->
                             <div class="text-center">
-                                <button id="sendButton" type="button" class="btn btn-primary"
+                                <button id="sendButton" type="submit" class="btn btn-primary"
                                     style="width: 30%">Book</button>
                             </div>
                     </div>

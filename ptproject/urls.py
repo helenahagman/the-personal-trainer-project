@@ -8,7 +8,7 @@ urlpatterns = [
          name='personaltrainer'),
     path("member/", views.Member.as_view(), name="member"),
     path("booking/", views.book_session, name="book_session"),
-    path("register/", views.Register, name="register"),
+    path("register/", views.Register.as_view(), name="register"),
     path("profile/", views.profile_view, name="profile"),
     path('book/', views.Book.as_view(), name='book'),
 ]

@@ -1,10 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator
 
 
 class BookingSession(models.Model):
-    name = models.CharField(max_length=80, default='Name')
-    email = models.EmailField(default='example@example.com')
+    name = models.CharField(max_length=80, default='Name', blank=False)
+    email = models.EmailField(default='example@example.com', blank=False)
+    age = models.IntegerField(
+        default='18',
+        blank=False,
+        validators=[
+            MinValueValidator(18)
+        ]
+    )
     date = models.DateField()
     time = models.TimeField()
 
