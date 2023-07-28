@@ -8,6 +8,5 @@ class BookingSession(models.Model):
     date = models.DateField()
     time = models.TimeField()
 
-
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
