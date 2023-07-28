@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
-from .forms import BookingForm
+from django.contrib.auth.decorators import login_required
+from .forms import BookingForm, RegistrationForm
 from .models import BookingSession
 
 
@@ -53,5 +54,19 @@ def book_session(request):
     return render(request, 'book.html', {'form': form})
 
 
+@login_required
+def profile_view(request):
+    return render(request, 'profile.html')
+
+
 def register_view(request):
-    return render(request, 'register_template.html')
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect to the profile page after successful registration
+            return redirect('profile')
+    else:
+        form = RegistrationForm()
+
+    return render(request, 'register_template.html', {'form': form})

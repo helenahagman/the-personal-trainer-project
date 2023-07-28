@@ -15,7 +15,9 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Register</h5>
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
                             <!-- Name input -->
                             <div class="form-outline mb-4">
                                 <input type="name" id="form2Example1" class="form-control" />
