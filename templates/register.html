@@ -14,8 +14,16 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Register</h5>
-                    <form method="post">
+                    <!--<form method="post" action="{% url 'register' %}">
                         {% csrf_token %}
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                        <br>
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                        <br>
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
                         <div class="form-outline mb-4">
                             <label class="form-label" for="id_name">Name</label>
                             <input type="text" name="name" id="id_name" class="form-control" />
@@ -47,7 +55,28 @@
                             {{ success_message }}
                         </div>
                         {% endif %}
-                    </form>
+                    </form>-->
+                    <form method="post" action="{% url 'register' %}">
+                        {% csrf_token %}
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                        <br>
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                        <br>
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                        <br>
+                        <div class="text-center">
+                            <button id="signInButton" type="submit" class="btn btn-primary"
+                                style="width: 30%">Register</button>
+                        </div>
+                        {# Display success message if it exists in the context #}
+                        {% if success_message %}
+                        <div class="alert alert-success" role="alert">
+                            {{ success_message }}
+                        </div>
+                        {% endif %}
                 </div>
             </div>
         </div>

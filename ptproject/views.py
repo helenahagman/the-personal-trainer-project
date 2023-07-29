@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.views.generic import FormView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from .forms import BookingForm, RegistrationForm
+from .forms import AddBooking, RegistrationForm
 from .models import BookingSession
 
 

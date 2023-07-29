@@ -1,17 +1,51 @@
 from django import forms
 from django.core.validators import MinValueValidator
 from django.utils import timezone
-from .models import BookingSession, UserProfile
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+from .models import BookingSession
+
+User = get_user_model()
 
 
-class BookingForm(forms.ModelForm):
+class RegistrationForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password']
+        widgets = {
+            'password': forms.PasswordInput(),
+        }
+
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
+class TimeInput(forms.TimeInput):
+    input_type = 'time'
+
+
+class AddBooking(forms.ModelForm):
     class Meta:
         model = BookingSession
-        fields = ['date', 'time']
+        fields = (
+            'name',
+            'email',
+            'age',
+            'date',
+            'time',
+        )
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['date'].widget.attrs.update({'class': 'form-control'})
+        widgets = {
+            'date': forms.DateInput(
+                format=('%Y-%m-%d'),
+                attrs={
+                    'class': 'form-control',
+                    'type': 'date'
+                }
+            ),
+            'time': forms.TimeInput(attrs={'type': 'time'}),
+        }
 
     def clean_date(self):
         """
@@ -22,17 +56,10 @@ class BookingForm(forms.ModelForm):
         if date:
             current_date = timezone.now().date()
             if date < current_date:
-                raise forms.ValidationError(
-                    "Date needs to be a future date")
-            return date
+                raise forms.ValidationError("Date needs to be a future date")
 
+        return date
 
-class RegistrationForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ['name', 'email', 'password']
-        widgets = {
-            'password': forms.PasswordInput(),
-        }
-
-
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['date'].widget.attrs.update({'class': 'form-control'})
