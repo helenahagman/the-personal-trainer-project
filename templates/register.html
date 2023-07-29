@@ -1,70 +1,56 @@
-<!-- register.html -->
 {% extends "base.html" %}
 {% load i18n %}
 
 {% block content %}
-
-
-<div class="col-lg-6 mb-4">
-    <div class=<div class="col-lg-6 mb-4">
-        <div class="card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="/static/img/pexels-bich-tran-669986.jpg" class="img-fluid" />
-                <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Register</h5>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <!-- Name input -->
-                    <div class="form-outline mb-4">
-                        <input type="name" id="form2Example1" class="form-control" />
-                        <label class="form-label" for="form2Example1">Name</label>
-                    </div>
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="email" id="form2Example1Email" class="form-control" />
-                        <label class="form-label" for="form2Example1Email">Email address</label>
-                    </div>
-
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <input type="password" id="form2Example2" class="form-control" />
-                        <label class="form-label" for="form2Example2">Choose Password</label>
-                    </div>
-
-                    <!-- 2 column grid layout for inline styling -->
-                    <div class="row mb-4">
-                        <div class="col d-flex justify-content-center">
-                            <!-- Checkbox -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                                <label class="form-check-label" for="form2Example31"> Remember me </label>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="/static/img/pexels-bich-tran-669986.jpg" class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Register</h5>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="id_name">Name</label>
+                            <input type="text" name="name" id="id_name" class="form-control" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="id_email">Email address</label>
+                            <input type="email" name="email" id="id_email" class="form-control" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="id_password">Choose Password</label>
+                            <input type="password" name="password" id="id_password" class="form-control" />
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col d-flex justify-content-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember_me" value="1"
+                                        id="form2Example31" checked />
+                                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Submit button -->
-                    <div class="text-center">
-                        <button id="signInButton" type="button" class="btn btn-primary"
-                            style="width: 30%">Register</button>
-                    </div>
-                    {# Display success message if it exists in the context #}
-                    {% if success_message %}
-                    <div class="alert alert-success" role="alert">
-                        {{ success_message }}
-                    </div>
-                    {% endif %}
-                </form>
+                        <div class="text-center">
+                            <button id="signInButton" type="submit" class="btn btn-primary"
+                                style="width: 30%">Register</button>
+                        </div>
+                        {# Display success message if it exists in the context #}
+                        {% if success_message %}
+                        <div class="alert alert-success" role="alert">
+                            {{ success_message }}
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-</section>
-
-
-
 {% endblock %}
