@@ -34,6 +34,15 @@ class Profile(generic.TemplateView):
     template_name = "profile.html"
 
 
+class ProfileView(generic.TemplateView):
+    # Opens profile page
+    template_name = "profile.html"
+
+    @login_required
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
 class Register(generic.TemplateView):
     # Opens register page
     template_name = "register.html"
@@ -42,12 +51,6 @@ class Register(generic.TemplateView):
 class Login(generic.TemplateView):
     # Opens login page
     template_name = "login.html"
-
-
-# class BookingForm(forms.ModelForm):
-#    class Meta:
-#        model = BookingSession
-#        fields = ['name', 'email', 'date', 'time']
 
 
 def book_session(request):
@@ -61,24 +64,6 @@ def book_session(request):
         form = BookingForm()
 
     return render(request, 'book.html', {'form': form})
-
-
-@login_required
-def profile_view(request):
-    return render(request, 'profile.html')
-
-
-# def register_view(request):
-#    if request.method == 'POST':
-#        form = RegistrationForm(request.POST)
-#        if form.is_valid():
-#            form.save()
-#            # Redirect to the profile page after successful registration
-#            return redirect('profile')
-#    else:
-#        form = RegistrationForm()
-
-#    return render(request, 'register_template.html', {'form': form})
 
 
 class RegisterView(FormView):
@@ -95,18 +80,6 @@ class RegisterView(FormView):
         context = self.get_context_data(form=form)
         context['success_message'] = "Registration successful! You can now log in."
         return render(self.request, self.template_name, context)
-
-
-@login_required
-def delete_booking(request, id):
-    """
-    To be able to delete/cancel a booking the user needs to be loged in
-    """
-    booking = get_object_or_404(BookingSession, user=request.user, pk=id)
-    if request.method == 'POST':
-        booking.delete()
-    message.success(request, 'The booking was canceled')
-    return redirect('user_profile')
 
 
 def log_in(request):
