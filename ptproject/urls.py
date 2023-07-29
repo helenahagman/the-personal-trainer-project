@@ -1,5 +1,5 @@
 from django.urls import path
-from ptproject.views import Home, PersonalTrainer, Member, book_session, Register, Profile
+from ptproject.views import Home, PersonalTrainer, Member, book_session, Register, Profile, login
 from . import views
 
 urlpatterns = [
@@ -9,6 +9,7 @@ urlpatterns = [
     path("member/", views.Member.as_view(), name="member"),
     path("booking/", views.book_session, name="book_session"),
     path("register/", views.Register.as_view(), name="register"),
+    path('login/', views.Login, name='login'),
     path("profile/", views.profile_view, name="profile"),
     path('book/', views.Book.as_view(), name='book'),
 ]

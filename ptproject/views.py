@@ -1,3 +1,5 @@
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
@@ -33,6 +35,11 @@ class Profile(generic.TemplateView):
 class Register(generic.TemplateView):
     # Opens register page
     template_name = "register.html"
+
+
+class Login(generic.TemplateView):
+    # Opens login page
+    template_name = "login.html"
 
 
 # class BookingForm(forms.ModelForm):
@@ -82,3 +89,18 @@ def delete_booking(request, id):
         booking.delete()
     message.success(request, 'The booking was canceled')
     return redirect('user_profile')
+
+
+def log_in(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, username=email, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('success_page')
+        else:
+            # Handle invalid login credentials (display error message, etc.)
+
+            return render(request, 'login.html')
