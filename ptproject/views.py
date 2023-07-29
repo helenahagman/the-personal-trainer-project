@@ -65,20 +65,18 @@ def book_session(request):
     return render(request, 'book.html', {'form': form})
 
 
-class RegisterView(FormView):
-    template_name = "register.html"
-    form_class = RegistrationForm
-    # Redirect to a success page after successful registration
-    success_url = reverse_lazy('registration_success')
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form. is_valid():
+            user = form.save()
+            # Log in the user efter registration
+            login(request, user)
+            return redirect('success_page')
+    else:
+        form = RegistrationForm()
 
-    def form_valid(self, form):
-        # Save the user profile to the database
-        form.save()
-
-        # Display the success message in the same template
-        context = self.get_context_data(form=form)
-        context['success_message'] = "Registration successful! You can now log in."
-        return render(self.request, self.template_name, context)
+    return render(request, 'register.html', {'form': form})
 
 
 def log_in(request):
