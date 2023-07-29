@@ -17,7 +17,7 @@ class BookingForm(forms.ModelForm):
         """
         Past date should not be bookable
         """
-        date = self.cleaned_date.get('date')
+        date = self.cleaned_data.get('date')
 
         if date:
             current_date = timezone.now().date()

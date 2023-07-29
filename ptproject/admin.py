@@ -6,6 +6,9 @@ from .views import BookingForm
 
 class BookingSessionAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'date', 'time']
+    search_fields = ['name', 'email', 'date']
+    actions = ['approve_bookings']
 
 
-admin.site.register(BookingSession, BookingSessionAdmin)
+def approve_bookings(self, request, queryset):
+    queryset.update(apporved=True)
