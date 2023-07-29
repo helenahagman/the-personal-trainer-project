@@ -23,9 +23,7 @@
                             <!-- Date input -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="{{ form.date.id_for_label }}">Date</label>
-                                {% with form.date|add_class:"form-control" %}
-                                {{ form.date.as_widget }}
-                                {% endwith %}
+                                {{ form.date }}
                             </div>
                             <!--<div class="form-outline mb-4">
                                 <label class="form-label" for="dateInput">Date</label>

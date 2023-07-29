@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='bookingsession',
             name='age',
-            field=models.IntegerField(default='18', validators=[django.core.validators.MinValueValidator(18)]),
+            field=models.IntegerField(default='18', validators=[
+                                      django.core.validators.MinValueValidator(18)]),
         ),
     ]

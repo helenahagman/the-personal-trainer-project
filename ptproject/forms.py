@@ -13,7 +13,6 @@ class BookingForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['date'].widget.attrs.update({'class': 'form-control'})
 
-
     def clean_date(self):
         """
         Past date should not be bookable
