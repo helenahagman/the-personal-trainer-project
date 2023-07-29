@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block content %}
-<!-- Your existing content for the Register page goes here -->
+
 
 <div class="col-lg-6 mb-4">
     <div class=<div class="col-lg-6 mb-4">
@@ -51,6 +51,12 @@
                         <button id="signInButton" type="button" class="btn btn-primary"
                             style="width: 30%">Register</button>
                     </div>
+                    {# Display success message if it exists in the context #}
+                    {% if success_message %}
+                    <div class="alert alert-success" role="alert">
+                        {{ success_message }}
+                    </div>
+                    {% endif %}
                 </form>
             </div>
         </div>

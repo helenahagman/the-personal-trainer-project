@@ -2,8 +2,10 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
+from django.views.generic import FormView
 from django.contrib.auth.decorators import login_required
-from .forms import BookingForm, RegisterForm
+from django.urls import reverse_lazy
+from .forms import BookingForm, RegistrationForm
 from .models import BookingSession
 
 
@@ -66,17 +68,33 @@ def profile_view(request):
     return render(request, 'profile.html')
 
 
-def register_view(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # Redirect to the profile page after successful registration
-            return redirect('profile')
-    else:
-        form = RegistrationForm()
+# def register_view(request):
+#    if request.method == 'POST':
+#        form = RegistrationForm(request.POST)
+#        if form.is_valid():
+#            form.save()
+#            # Redirect to the profile page after successful registration
+#            return redirect('profile')
+#    else:
+#        form = RegistrationForm()
 
-    return render(request, 'register_template.html', {'form': form})
+#    return render(request, 'register_template.html', {'form': form})
+
+
+class RegisterView(FormView):
+    template_name = "register.html"
+    form_class = RegistrationForm
+    # Redirect to a success page after successful registration
+    success_url = reverse_lazy('registration_success')
+
+    def form_valid(self, form):
+        # Save the user profile to the database
+        form.save()
+
+        # Display the success message in the same template
+        context = self.get_context_data(form=form)
+        context['success_message'] = "Registration successful! You can now log in."
+        return render(self.request, self.template_name, context)
 
 
 @login_required

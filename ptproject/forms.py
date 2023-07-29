@@ -27,10 +27,12 @@ class BookingForm(forms.ModelForm):
             return date
 
 
-class RegisterForm(forms.ModelForm):
+class RegistrationForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['name', 'email', 'password']
         widgets = {
             'password': forms.PasswordInput(),
         }
+
+
