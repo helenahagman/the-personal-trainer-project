@@ -1,5 +1,5 @@
 <h1>The Personal Trainer Project</h1>
-<p><img src=" amiresponsive.JPG" alt="Am I Responsive"></li></p> #add link 
+<p><img src="amiresponsive.JPG" alt="Am I Responsive"></li></p> #add link 
 
 <h4 href="https://github.com/helenahagman/the-personal-trainer-project/tree/main" > View The Personal Trainer Project on Github Pages </h3>
 <br>
@@ -226,11 +226,11 @@ I wanted to build a good looking website where the functionality for online book
     <th>Pass/Fail</th>
   </tr>
 <tr>
-    <td>Push Run program button</td>
-    <td>Welcome message should appear along with rules of the game and a message that askes the player to enter a name</td>
-    <td>Press "RUN PROGRAM" button</td>    
-    <td>Welcome message, game rules and the question for the user to enter a name was displayed</td>
-    <td>Pass</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
 </tr>
 <h3>Testing User Stories</h3>
 <table style="width:100%">
@@ -242,11 +242,11 @@ I wanted to build a good looking website where the functionality for online book
     <th>Pass/Fail</th>
   </tr>
 <tr>
-    <td>Push Run program button</td>
-    <td>Welcome message should appear along with rules of the game and a message that askes the player to enter a name</td>
-    <td>Press "RUN PROGRAM" button</td>    
-    <td>Welcome message, game rules and the question for the user to enter a name was displayed</td>
-    <td>Pass</td>
+    <td></td>
+    <td></td>
+    <td></td>    
+    <td></td>
+    <td></td>
 </tr>
 <ul>
 <h3>Index Page</h3>
@@ -265,11 +265,11 @@ I wanted to build a good looking website where the functionality for online book
     <th>Pass/Fail</th>
   </tr>
 <tr>
-    <td>Push Run program button</td>
-    <td>Welcome message should appear along with rules of the game and a message that askes the player to enter a name</td>
-    <td>Press "RUN PROGRAM" button</td>    
-    <td>Welcome message, game rules and the question for the user to enter a name was displayed</td>
-    <td>Pass</td>
+    <td></td>
+    <td></td>
+    <td></td>    
+    <td></td>
+    <td></td>
 </tr>
 </ul>
 </ul>
@@ -334,44 +334,25 @@ I wanted to build a good looking website where the functionality for online book
 </ul>
 
 
-
---------------------------------------------------
-
-
-#update list when tested
-
-<h2>Testing</h2>
-
-<li><a href="https://www.pythonchecker.com/">Python Syntax Checker PEP8</a><br>
-<p>Used for testing the code for syntax errors</p></li><br>
-<li><a href="https://lighthouse-metrics.com/lighthouse/checks/276b5f51-03df-4623-94e4-edb401d97a5e/runs/6992b638-3ac8-4fd5-915d-b2eb7bb9a395">Lighthouse test</a><br><img src="views/assets/images/lighthouse.JPG" alt="Lighthouse" width="350" height="200"></li><br>
-<li><a href="https://pep8ci.herokuapp.com/">Code Institute CI Python linter</a><br>
-<p>Used for testing the code for errors- corrected and tested again - all clear with no errors found</p><br> <img src="views/assets/images/cipythonlinter.JPG" alt="CI Python Linter" width="350" height="200"></li>
+ <h3>Known unsolved bugs</h3> 
 <br>
-<li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>
-<p>Used for testing the code for syntax errors - 1 Syntax error detected</p>
-</a></li>
-<br>
-
- <h3>Known unsolved bugs</h3>  #update
-<br>
-<li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>
-<p>Used for testing the code for syntax errors - 1 Syntax error detected.</p>
-<img src="views/assets/images/syntaxerror.JPG" alt="Syntax error" width="250" height="200"></a>
-<p>Status - Not solved</p></li>
+<li>
+<p>App looks strange on live site</p>
+<p>Menu link on smaller screens dont open</p>
+<p>Images on live site</p>
+<p>Book session button on Index page</p>
+<p>Link to Sign in on Register page</p>
+<p>Link to Register on Sign in page</p>
+<p>Contact post do not work on live site</p>
+</li>
 <br>
 
 
 
-<h3>Credits & Inspiration</h3>  #update
+<h3>Credits & Inspiration</h3> 
 
 <p>Sites and code used for inspiration and test on this project:</p>
-<li><a href="https://www.programiz.com/python-programming/online-compiler/">Online Python Compiler</a><br>
-<p>Used throughout the project for testing the code as I went along to see the result straight away.</p></li>
-<li><a href="https://inventwithpython.com/invent4thed/chapter10.html">Invent With Python</a><br>
-<p>Used for inspiration and tips on how to build the program</p></li>
-<li><a href="https://github.com/Kieran132/TicTacToe-project3/blob/main/run.py">Fellow student Kieran</a><br>
-<p>For ideas on how to present the project</p></li>
+
 <li><a href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a></li>
 <p>Problem solvning</p>
 <li><a href="https://www.python.org/about/help/">Pyhton.org</a></li>
@@ -385,14 +366,9 @@ I wanted to build a good looking website where the functionality for online book
 <p>Problem solving and ideas</p>
 <br>
 <p>I used the walkthrough in the Codeinstitute section "Startbootstrap clean-blog URL change" to add the clean-blog theme from bootstrap to style my pages.</p>
-<p>A special thank you to my mentor Jubril Akolade for useful tips and support on the way</p>
 <p>Thank you to The Code Institute for material, instructions and connection to the community in Slack</p>
 
 
 
-
-
-
-
-
-Structure map
+<h4>Special note</h4>
+<a>This project is not nearly done, I have reached out to student care about the possibility for an extension but as of this moment I have not received a reply. The app looked good befor the final deployment to heroku and the live app looks horrible. As my time just ran out I have no possibility to update the code or continue with the error handling. </a>
