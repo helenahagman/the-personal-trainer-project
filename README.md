@@ -371,4 +371,4 @@ I wanted to build a good looking website where the functionality for online book
 
 
 <h4>Special note</h4>
-<a>This project is not nearly done, I have reached out to student care about the possibility for an extension but as of this moment I have not received a reply. The app looked good befor the final deployment to heroku and the live app looks horrible. As my time just ran out I have no possibility to update the code or continue with the error handling. </a>
+<a>This project is not nearly done, I have reached out to student care about the possibility for an extension but as of this moment I have not received a reply. The app looked good befor the final deployment to heroku and the live app looks horrible. As my time just ran out I have no possibility to update the code or continue with the error handling. Please also note that the readme is not fully done and comments for acknowledgement of code used and images is not complete entirely.</a>
