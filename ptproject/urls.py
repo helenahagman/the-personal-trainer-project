@@ -1,7 +1,6 @@
 from . import views
 from django.urls import path
-from ptproject.views import Home, PersonalTrainer,
-Member, book_session, Register, Profile, login
+from ptproject.views import Home, PersonalTrainer, Member, book_session, Register, Profile, login
 
 
 urlpatterns = [
