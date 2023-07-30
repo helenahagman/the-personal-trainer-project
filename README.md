@@ -1,7 +1,9 @@
 <h1>The Personal Trainer Project</h1>
 <p><img src=" amiresponsive.JPG" alt="Am I Responsive"></li></p> #add link 
 
-<h4 href=”https://github.com/helenahagman/the-personal-trainer-project/tree/main” > View The Personal Trainer Project on Github Pages </h3>
+<h4 href="https://github.com/helenahagman/the-personal-trainer-project/tree/main" > View The Personal Trainer Project on Github Pages </h3>
+<br>
+<h4 href="https://ptproject-ec6a8ad157bf.herokuapp.com/">Live Site</h4>
 
 <h2> CONTENTS</h2>
 <h4>User Experience (UX)</h4>
@@ -13,7 +15,6 @@
 
 <h4>Design</h4>
 <ul>
-<li>Colours and Typography</li>
 <li>Imagery</li>
 <li>Wire Frames</li>
 <li>Features</li>
@@ -146,8 +147,6 @@ I wanted to build a good looking website where the functionality for online book
 
 
 <h2>Design</h2>
-<h3>Colours and Typography</h3>
-
 
 <h3>Imagery</h3>
 <h5>The images for the site have been downloaded from Pexels free images.</h5>
