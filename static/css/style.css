@@ -1,6 +1,14 @@
 /* custom css*/
 
 
+body {
+    padding-top: 70px;
+}
+
+.masthead {
+    margin-top: 100px;
+}
+
 .custom-columns {
     text-align: center;
 }

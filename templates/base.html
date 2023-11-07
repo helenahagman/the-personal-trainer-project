@@ -9,8 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="description" 
-    content="Health club/gym to help you get in shape, loose weight or build muscles">
+    <meta name="description" content="Health club/gym to help you get in shape, loose weight or build muscles">
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    <link rel="icon" type="image/png" sizes="32x32" href="">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
 
     <link rel="stylesheet" href="{% static 'css/clean-blog.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" type="text/css">
@@ -41,7 +46,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto py-4 py-lg-0 ml-lg-0" id="menu">
                     <li class="nav-item {% if active_page == 'about' %}active{% endif %}"><a
-                            class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'index' %}">About us</a></li>
+                            class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'index' %}">Home</a></li>
                     <li class="nav-item {% if active_page == 'trainer' %}active{% endif %}"><a
                             class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'personaltrainer' %}">Personal
                             Trainer</a></li>
