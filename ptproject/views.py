@@ -4,7 +4,8 @@ from django.views import generic, View
 from django.views.generic import FormView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from .forms import AddBooking, RegistrationForm
+from django.contrib import messages
+from .forms import RegistrationForm, BookingForm
 from .models import BookingSession
 
 
@@ -89,6 +90,13 @@ def log_in(request):
             login(request, user)
             return redirect('success_page')
         else:
-            # Handle invalid login credentials (display error message, etc.)
-
+            # Handle invalid login credentials
+            messages.error(
+                request, 'Invalid email or password. Please try again.')
             return render(request, 'login.html')
+
+    return render(request, 'login.html')
+
+
+def home_view(request):
+    return render(request, 'index.html')

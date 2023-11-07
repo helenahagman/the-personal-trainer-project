@@ -1,10 +1,10 @@
 from django import forms
 from django.core.validators import MinValueValidator
 from django.utils import timezone
-from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from .models import BookingSession
 
+from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
@@ -32,16 +32,16 @@ class TimeInput(forms.TimeInput):
     input_type = 'time'
 
 
-class AddBooking(forms.ModelForm):
+class BookingForm(forms.ModelForm):
     class Meta:
         model = BookingSession
-        fields = (
+        fields = [
             'name',
             'email',
             'age',
             'date',
             'time',
-        )
+        ]
 
         widgets = {
             'date': forms.DateInput(
