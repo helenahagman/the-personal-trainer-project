@@ -5,15 +5,23 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 
-class BookingSession(models.Model):
+class BookingRequest(models.Model):
+    STATUS_CHOICES = (
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('rejected', 'Rejected'),
+    )
     name = models.CharField(max_length=80, default='Name', blank=False)
     email = models.EmailField(default='example@example.com', blank=False)
     age = models.CharField(max_length=2, default='18', blank=False)
     date = models.DateField()
     time = models.TimeField()
+    message = models.TextField(blank=True)
+    status = models.CharField(
+        max_length=10, choices=STATUS_CHOICES, default='pending')
 
     def __str__(self):
-        return self.name
+        return f"Booking Request #{self.id} - {self.name}"
 
 
 class UserProfile(models.Model):
@@ -40,11 +48,11 @@ class TimeInput(forms.TimeInput):
 
 class AddBooking(forms.ModelForm):
     class Meta:
-        model = BookingSession
+        model = BookingRequest
         fields = (
             'name',
             'email',
-            'age',  # Include 'age' field in the form
+            'age',
             'date',
             'time',
         )

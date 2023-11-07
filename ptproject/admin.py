@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django import forms
-from .models import BookingSession
+from .models import BookingRequest
 
 
-@admin.register(BookingSession)
-class BookingSessionAdmin(admin.ModelAdmin):
+@admin.register(BookingRequest)
+class BookingRequestAdmin(admin.ModelAdmin):
 
     list_display = (
         'name', 'email', 'date', 'time'

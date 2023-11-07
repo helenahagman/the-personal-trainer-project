@@ -1,20 +1,28 @@
-
 /* custom css*/
 
-.footer-text-color {
-  color: white;
-}
 
 .custom-columns {
-  text-align: center;
+    text-align: center;
 }
 
-#menu a.current{
-  color: #080707;
-  background-color: rgb(180, 175, 175);
+#menu a.current {
+    color: #080707;
+    background-color: rgb(180, 175, 175);
 }
 
 .btn-primary {
-  background-color: #248ea3;
-  border-color: #0085A1;
+    background-color: #248ea3;
+    border-color: #0085A1;
+}
+
+.footer-text-color {
+    color: white;
+}
+
+.footer a {
+    color: black;
+}
+
+.footer a:hover {
+    color: gray;
 }
