@@ -1,5 +1,5 @@
 <h1>The Personal Trainer Project</h1>
-<p><img src="amiresponsive.JPG" alt="Am I Responsive"></li></p> #add link 
+<p><img src="amiresponsive.JPG" alt="Am I Responsive"></li></p> #add link
 
 <h4 href="https://github.com/helenahagman/the-personal-trainer-project/tree/main" > View The Personal Trainer Project on Github Pages </h3>
 <br>
@@ -50,7 +50,6 @@
 </ol>
 </ul>
 
-
 <h4>Credits</h4>
 <ul>
 <li>Code Used</li>
@@ -59,32 +58,33 @@
 
 </ul>
 
-
 <h2> CONTENTS</h2>
 <h3> Why this project</h3>
-<p>I built this page for my 4th project in the Code Institute course for the Diploma in Full Stack Software Development.<br> 
+<p>I built this page for my 4th project in the Code Institute course for the Diploma in Full Stack Software Development.<br>
 I wanted to build a good looking website where the functionality for online booking of Personal Trainer sessions would be possible and where both the user and the owner of the site can get the information they need. As building an online booking for Personal Trainer Sessions will be one of my projects for my current job as well this fall I used the opportunity to talk to my boss for user stories and planning of the project. Key points that would be crutial for the real site has been a part of this project.<br></p>
 
 <h3>Strategy</h3>
 <h4>Target audiences that the website will focus on:</h4>
 <h5>Roles</h5>
-<ul> 
+<ul>
 <li>Persons who want to get tips from a Personal Trainer</li>
 <li>Persons who are interested in gym exercise</li>
+<li>Persons who want to get in shape</li>
 <li>New users that are not yet registered</li>
 <li>Current users that are registered</li>
 </ul>
 <h5>Demographics</h5>
 <ul>
 <li>Persons in the age over 18 years</li>
-</ul> 
+</ul>
 
 <h5>Psychographics</h5>
 <ul><li>Persons who want to:</li>
 <ul>
-<li>Get in general shape</li>
+<li>Get in shape</li>
 <li>Get stronger</li>
 <li>Loose weight</li>
+<li>Gain muscels</li>
 <li>Train for a specific goal (ex a competition)</li>
 <li>Increase their stamina</li>
 <li>Persons who are new to training in a gym</li>
@@ -93,44 +93,45 @@ I wanted to build a good looking website where the functionality for online book
 
 <h5>User needs:</h5>
 <ul>
-<li>Login as a current user</li>
-<li>Register as a new user</li>
-<li>See available personal trainer sessions</li>
-<li>Get information on what is offered on the site</li>
-<li>Book personal trainer sessions</li>
-<li>Cancel booked sessions
-<li>Sign up for membership</li>
-<li>Get in contact</li> 
-<li>Edit registered user information</li>
+<li>User Story: As a current user I want to be able to login</li>
+<li>User Story:As a new user I want to be able to register</li>
+<li>User Story:As a current user I want to be able to see available personal trainer sessions</li>
+<li>User Story:As a user I want to be able to get information on what is offered on the site</li>
+<li>User Story:As a user I want to be able to book personal trainer sessions</li>
+<li>User Story:As a user I want to be able to cancel booked sessions</li>
+<li>User Story:As a user I want to be able to sign up for membership</li>
+<li>User Story:As a user I want to be able to get in contact with the facility</li>
+<li>User Story:As a current user I want to be able to see registered information that the owner has on file</li>
   </ul>
 
 <h5>Client needs:</h5>
 <ul>
-<li>Provide information about the company</li>
-<li>Offer Memberships</li>
-<li>Offer Bookable Personal Trainer Sessions</li>
-<li>Administrator log in</li>
-<li>Communicate with users/customers that have questions</li>
-<li>Send emails/sms to registered users</li>
-<li>See registered users</li>
-<li>See booked sessions</li>
+<li>User Story:As the owner I want to be able to provide information about the company</li>
+<li>User Story:As the owner I want to be able to offer Memberships</li>
+<li>User Story:As the owner I want to be able to offer Bookable Personal Trainer Sessions</li>
+<li>User Story:As the owner I want to be able to log in as the administrator</li>
+<li>User Story:As the owner I want to be able to communicate with users</li>
+<li>User Story:As the owner I want to be able to send messages to registered users</li>
+<li>User Story:As the owner I want to be able to see registered users</li>
+<li>User Story:As the owner I want to be able to handle booked sessions</li>
 </ul>
 
 <h5>Content Requirements</h5>
 <ul>
 <li>Images that contribute to what the site is offering</li>
 <li>Explanatory texts</li>
-<li>Registration possibilities</li>
-<li>Log in possibilities</li>
-<li>Log out possibilities</li>
+<li>Easy navigation</li>
+<li>Registration possibilities for new users</li>
+<li>Log in possibilities for registered users</li>
+<li>Log out possibilities for logged in users</li>
 <li>Online booking for Personal Trainer Sessions</li>
-<li>Contact</li>
+<li>Contact form for users</li>
 </ul>
 
 <h5>Functionality</h5>
 <ul>
 <li>Register as new user</li>
-<li>Login as a current user</li>
+<li>Login as a registered user</li>
 <li>Log out as a logged in user</li>
 <li>Possibility to choose custom username and password</li>
 <li>Easy navigation on the site</li>
@@ -144,8 +145,6 @@ I wanted to build a good looking website where the functionality for online book
 <h3>Link to KANBAN Board with User Stories on Trello:</h3>
 <a href="https://trello.com/b/yxkUuMp3/kanban-board">Trello KANBAN Board</a>
 
-
-
 <h2>Design</h2>
 
 <h3>Imagery</h3>
@@ -156,9 +155,8 @@ I wanted to build a good looking website where the functionality for online book
 <h5>Wireframes were created using Miro and was created for mobile, tablet and desktop views.</h5>
 <a href=” https://miro.com/app/board/uXjVM94tSQs=/?share_link_id=555048984575” >Miro Wire Frames</a>
 
-
 <h3>Features</h3>
-<p>The website contains of three main pages: start/about page, Personal Trainer page, Members page. All main pages are accessible from the navigation menu on the top of the page.</p>
+<p>The website contains of three main pages: Main page, Personal Trainer page, Members page. All main pages are accessible from the navigation menu on the top of the page.</p>
 <li>All main pages:</li>
 <ul>
   <li>Responsive navigation menu on the top of the page to be able to navigate to the three main pages. The links to the pages are placed on the right side of the navigation bar, to the left a logo with the project name is placed.</li>
@@ -177,7 +175,6 @@ I wanted to build a good looking website where the functionality for online book
   <li>Short descriptive information along with an image, below that two postcards with link to the contact form and the login and register form</li>
 </ul>
 
-
 <h3>Accessability</h3>
 <p>Throughout the process of building the website I have tried to think of the accessibility to make it as user friendly as possible. I have used the best of my knowledge to:
 <ul>
@@ -186,9 +183,8 @@ I wanted to build a good looking website where the functionality for online book
   <li>Images that fit the purpose</li>
   <li>Hoover function on the menue items and buttons</li>
   <li>Icons for social media links insted of text</li>
-  <li>Use the same layout on all main pages</li>
+  <li>Use the same layout on all pages</li>
 </ul></p>
-
 
 <h2>Technology</h2>
 
@@ -216,17 +212,15 @@ I wanted to build a good looking website where the functionality for online book
 <a href=""></a>
 <h3>Lighthouse</h3>
 <a href=""></a>
-<h3>Bugs</h3>
+<h3>Known Bugs</h3>
 <table style="width:100%">
   <tr>
-    <th>Bug</th>
+    <th>Known Bug</th>
     <th>Expected Outcome</th>
-    <th>Test Performed</th>
-    <th>Result</th>
-    <th>Pass/Fail</th>
+    <th>Current outcome</th>
+    <th>Comment</th>
   </tr>
 <tr>
-    <td></td>
     <td></td>
     <td></td>
     <td></td>
@@ -242,18 +236,284 @@ I wanted to build a good looking website where the functionality for online book
     <th>Pass/Fail</th>
   </tr>
 <tr>
+    <td>User Story: As a current user I want to be able to login</td>
     <td></td>
     <td></td>
-    <td></td>    
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As a new user I want to be able to register</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As a current user I want to be able to see available personal trainer sessions</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As a user I want to be able to get information on what is offered on the site</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As a user I want to be able to book personal trainer sessions</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As a user I want to be able to cancel booked sessions</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr>
+    <td>User Story:As a user I want to be able to sign up for membership</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As a user I want to be able to get in contact with the facility</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As a current user I want to be able to see registered information that the owner has on file</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to provide information about the company</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to offer Memberships</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to offer Bookable Personal Trainer Sessions</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to log in as the administrator</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to communicate with users</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to send messages to registered users</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to see registered users</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>User Story:As the owner I want to be able to handle booked sessions</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<h3>Testing Pages</h3>
+<table style="width:100%">
+  <tr>
+    <th>Page</th>
+    <th>Links</th>
+    <th>Responsiveness</th>
+    <th>Comment</th>
+  </tr>
+<tr>
+    <td>Start page</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Personal Trainer Page</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Member Page</td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <ul>
-<h3>Index Page</h3>
-  
+<h3>Start Page Testing</h3>
+<table style="width:100%">
+  <tr>
+    <th>Test</th>
+    <th>Expected Outcome</th>
+    <th>Result</th>
+    <th>Pass/Fail</th>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
 <h3>Personal Trainer Page</h3>
+<table style="width:100%">
+  <tr>
+    <th>Test</th>
+    <th>Expected Outcome</th>
+    <th>Result</th>
+    <th>Pass/Fail</th>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
 
 <h3>Member Page</h3>
+<table style="width:100%">
+  <tr>
+    <th>Test</th>
+    <th>Expected Outcome</th>
+    <th>Result</th>
+    <th>Pass/Fail</th>
+  </tr>
+<tr>
+    <td>Link to </td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
 
 <h3>Testing features and functions</h3>
 <table style="width:100%">
@@ -265,9 +525,51 @@ I wanted to build a good looking website where the functionality for online book
     <th>Pass/Fail</th>
   </tr>
 <tr>
+    <td>Register</td>
+    <td>New user gets registered</td>
     <td></td>
     <td></td>
-    <td></td>    
+    <td></td>
+</tr>
+<tr>
+    <td>Log in</td>
+    <td>User gets logged in</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Log out</td>
+    <td>Logged in user is logged out</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Contact form</td>
+    <td>Send message to email and get confirm message</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Booking form</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -333,8 +635,7 @@ I wanted to build a good looking website where the functionality for online book
 
 </ul>
 
-
- <h3>Known unsolved bugs</h3> 
+ <h3>Known unsolved bugs</h3>
 <br>
 <li>
 <p>App looks strange on live site</p>
@@ -347,9 +648,7 @@ I wanted to build a good looking website where the functionality for online book
 </li>
 <br>
 
-
-
-<h3>Credits & Inspiration</h3> 
+<h3>Credits & Inspiration</h3>
 
 <p>Sites and code used for inspiration and test on this project:</p>
 
@@ -367,8 +666,3 @@ I wanted to build a good looking website where the functionality for online book
 <br>
 <p>I used the walkthrough in the Codeinstitute section "Startbootstrap clean-blog URL change" to add the clean-blog theme from bootstrap to style my pages.</p>
 <p>Thank you to The Code Institute for material, instructions and connection to the community in Slack</p>
-
-
-
-<h4>Special note</h4>
-<a>This project is not nearly done, I have reached out to student care about the possibility for an extension but as of this moment I have not received a reply. The app looked good befor the final deployment to heroku and the live app looks horrible. As my time just ran out I have no possibility to update the code or continue with the error handling. Please also note that the readme is not fully done and comments for acknowledgement of code used and images is not complete entirely.</a>
