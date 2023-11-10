@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,6 +47,7 @@ ALLOWED_HOSTS = [
     'ptproject-ec6a8ad157bf.herokuapp.com',
     'localhost',
     '8000-helenahagman-the-persona-9mdh98ciyo.us2.codeanyapp.com',
+    '8000-helenahagman-the-persona-e68krmsjua.us2.codeanyapp.com',
 ]
 
 # Application definition
@@ -69,10 +70,15 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
+
+AUTHENTICATION_BACKENDS = [
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 SITE_ID = 1
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/accounts/logout/'
 LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_VERIFICATION = {
@@ -123,16 +129,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'personaltrainer.wsgi.application'
 
-database_url = os.environ.get("DATABASE_URL")
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
-if database_url:
-    # Parse the database URL using dj_database_url.config
-    db_from_env = dj_database_url.config(default=database_url)
-
-    # Update the OPTIONS to include the query parameters
+if DATABASE_URL:
+    db_from_env = dj_database_url.config(default=DATABASE_URL)
     db_from_env['OPTIONS'] = {}
-    if '?' in database_url:
-        query_params = database_url.split('?')[1]
+
+    if '?' in DATABASE_URL:
+        query_params = DATABASE_URL.split('?')[1]
         db_from_env['OPTIONS']['sslmode'] = 'require'
         db_from_env['OPTIONS']['sslcompression'] = True
         db_from_env['OPTIONS']['sslcert'] = '/etc/ssl/certs/ca-certificates.crt'
@@ -151,6 +155,8 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
