@@ -3,25 +3,49 @@ from django import forms
 from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import MinValueValidator
+from cloudinary.models import CloudinaryField
 
 
-class BookingRequest(models.Model):
-    STATUS_CHOICES = (
-        ('pending', 'Pending'),
+STATUS = ((0, "Draft"), (1, "Published"))
+
+
+class Booking(models.Model):
+    """
+    Model for booking a session.
+    """
+
+    APPROVAL_CHOICES = (
         ('approved', 'Approved'),
-        ('rejected', 'Rejected'),
+        ('pending', 'Pending'),
+        ('not_approved', 'Not Approved'),
     )
-    name = models.CharField(max_length=80, default='Name', blank=False)
-    email = models.EmailField(default='example@example.com', blank=False)
-    age = models.CharField(max_length=2, default='18', blank=False)
-    date = models.DateField()
-    time = models.TimeField()
-    message = models.TextField(blank=True)
-    status = models.CharField(
-        max_length=10, choices=STATUS_CHOICES, default='pending')
+
+    username = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='user_bookings')
+    places_reserved = models.IntegerField(validators=[MinValueValidator(1), ])
+    approved = models.CharField(
+        max_length=12, choices=APPROVAL_CHOICES, default='pending')
 
     def __str__(self):
-        return f"Booking Request #{self.id} - {self.name}"
+        return f'{self.id} is booked by {self.username}'
+
+class Contact(models.Model):
+    """
+    Model for contact messages.
+
+    """
+
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    contact_message = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_on']
+        verbose_name_plural = 'Contact Messages'
+
+    def __str__(self):
+        return f'Contact message submitted by {self.name} on {self.created_on}'
 
 
 class UserProfile(models.Model):
@@ -44,43 +68,3 @@ class DateInput(forms.DateInput):
 
 class TimeInput(forms.TimeInput):
     input_type = 'time'
-
-
-class AddBooking(forms.ModelForm):
-    class Meta:
-        model = BookingRequest
-        fields = (
-            'name',
-            'email',
-            'age',
-            'date',
-            'time',
-        )
-
-        widgets = {
-            'date': forms.DateInput(
-                format=('%Y-%m-%d'),
-                attrs={
-                    'class': 'form-control',
-                    'type': 'date'
-                }
-            ),
-            'time': forms.TimeInput(attrs={'type': 'time'}),
-        }
-
-    def clean_date(self):
-        """
-        Past date should not be bookable
-        """
-        date = self.cleaned_data.get('date')
-
-        if date:
-            current_date = timezone.now().date()
-            if date < current_date:
-                raise forms.ValidationError("Date needs to be a future date")
-
-        return date
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['date'].widget.attrs.update({'class': 'form-control'})

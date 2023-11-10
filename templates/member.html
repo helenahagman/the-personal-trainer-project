@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
@@ -44,17 +46,19 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Contact Us</h5>
-                        <form>
+                        <form method="post" class="contact-form">
+                            {{ form|crispy }}
+                            {% csrf_token %}
                             <!-- Email input -->
-                            <div class="form-outline mb-4">
+                            <!--<div class="form-outline mb-4">
                                 <input type="email" id="form2Example1" class="form-control" />
                                 <label class="form-label" for="form2Example1">Email address</label>
-                            </div>
+                            </div>-->
                             <!-- Message input -->
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <label for="messageInput">Message</label>
                                 <textarea id="messageInput" class="form-control" rows="4"></textarea>
-                            </div>
+                            </div>-->
                             <!-- Submit button -->
                             <div class="text-center">
                                 <button id="sendButton" type="button" class="btn btn-primary"

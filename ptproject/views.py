@@ -1,12 +1,16 @@
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import get_user
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic.edit import CreateView
 from django.views.generic import FormView
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.contrib import messages
-from .forms import RegistrationForm, BookingForm
-from .models import BookingRequest
+from .forms import RegistrationForm, BookingForm, ContactForm
+from .models import Booking, Contact
 
 
 class Home(generic.TemplateView):
@@ -51,6 +55,18 @@ class Register(generic.TemplateView):
 class Login(generic.TemplateView):
     # Opens login page
     template_name = "login.html"
+
+
+class Contact(CreateView):
+    model = Contact
+    form_class = ContactForm
+    template_name = "contact.html"
+    success_url = reverse_lazy("contact_success")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["page_title"] = "Contact"
+        return context
 
 
 def book_session(request):
@@ -100,3 +116,135 @@ def log_in(request):
 
 def home_view(request):
     return render(request, 'index.html')
+
+
+class MyBookings(LoginRequiredMixin, View):
+   
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        current_time = timezone.now()
+
+        future_bookings = Booking.objects.filter(
+            username=user, session__session_start__gt=current_time
+        ).order_by("session__session_start")
+        past_bookings = Booking.objects.filter(
+            username=user, session__session_start__lte=current_time
+        ).order_by("-session__session_start")
+        return render(
+            request,
+            "my_bookings.html",
+            {
+                "future_bookings": future_bookings,
+                "past_bookings": past_bookings,
+                "page_title": "My Bookings",
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+        booking_id = request.POST.get("booking_id")
+        if booking_id:
+            booking = Booking.objects.filter(id=booking_id).first()
+
+            if booking and booking.username == request.user:
+                # Cancel booking
+                booking.delete()
+                messages.success(request, "Booking canceled successfully.")
+            else:
+                messages.error(request, "Unable to cancel the booking.")
+
+        return HttpResponseRedirect(reverse("my_bookings"))
+
+
+class SessionDetail(View):
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Session.objects.filter(status=1)
+        session = get_object_or_404(queryset, slug=slug)
+        trainer = session.trainer
+        feedbacks = session.feedbacks.filter(
+            approved=True).order_by("-created_on")
+        user = get_user(request)
+        has_booking = False
+        liked = False
+
+        booking_form = BookingForm()
+
+        if user.is_authenticated:
+            has_booking = self.user_has_booked(user, session)
+
+        if session.likes.filter(id=user.id).exists():
+            liked = True
+
+        return render(
+            request,
+            "session_detail.html",
+            {
+                "session": session,
+                "feedbacks": feedbacks,
+                "trainer": trainer,
+                "submitted_feedback": False,
+                "liked": liked,
+                "has_booking": has_booking,
+                "feedback_form": FeedbackForm(),
+                "booking_form": booking_form,
+                "page_title": session.title,
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+
+        queryset = Session.objects.filter(status=1)
+        session = get_object_or_404(queryset, slug=slug)
+        trainer = session.trainer
+        feedbacks = session.feedbacks.filter(
+            approved=True).order_by("-created_on")
+        liked = False
+        booking_form = BookingForm()
+        user = get_user(request)
+        submitted_feedback = False
+        submitted_booking = False
+
+        if session.likes.filter(id=user.id).exists():
+            liked = True
+
+        if user.is_authenticated:
+            
+            has_booking = self.user_has_booked(user, session)
+            if has_booking:
+                # User has already made a booking, return an error response
+                messages.error(
+                    request,
+                    "You have already booked this personal training session!"
+                    "Please check My Bookings page.",
+                )
+            else:
+                if "booking_submit" in request.POST:
+                    booking_form = BookingForm(data=request.POST)
+                    if booking_form.is_valid():
+                        booking = booking_form.save(commit=False)
+                        booking.session = session
+                        booking.username = user
+                        booking.save()
+                        submitted_booking = True
+                        messages.success(
+                            request, "Thank you for your booking request!")
+                    else:
+                        booking_form = BookingForm()
+
+        return render(
+            request,
+            "session_detail.html",
+            {
+                "session": session,
+                "feedbacks": feedbacks,
+                "trainer": trainer,
+                "submitted_feedback": submitted_feedback,
+                "submitted_booking": submitted_booking,
+                "liked": liked,
+                "feedback_form": FeedbackForm(),
+                "booking_form": booking_form,
+                "page_title": session.title,
+            },
+        )
+
+    def user_has_booked(self, user, session):
+        return Booking.objects.filter(session=session, username=user).exists()

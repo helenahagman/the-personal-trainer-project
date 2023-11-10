@@ -1,8 +1,7 @@
 from django import forms
 from django.core.validators import MinValueValidator
 from django.utils import timezone
-from django.contrib.auth import get_user_model
-from .models import BookingRequest
+from .models import Booking, Contact
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -33,42 +32,22 @@ class TimeInput(forms.TimeInput):
 
 
 class BookingForm(forms.ModelForm):
+    """
+    A form for booking sessions.
+
+    """
+
     class Meta:
-        model = BookingRequest
-        fields = [
-            'name',
-            'email',
-            'age',
-            'date',
-            'time',
-            'message',
-            'status',
-        ]
+        model = Booking
+        fields = ('places_reserved',)
 
-        widgets = {
-            'date': forms.DateInput(
-                format=('%Y-%m-%d'),
-                attrs={
-                    'class': 'form-control',
-                    'type': 'date'
-                }
-            ),
-            'time': forms.TimeInput(attrs={'type': 'time'}),
-        }
 
-    def clean_date(self):
-        """
-        Past date should not be bookable
-        """
-        date = self.cleaned_data.get('date')
+class ContactForm(forms.ModelForm):
+    """
+    A form for contact
 
-        if date:
-            current_date = timezone.now().date()
-            if date < current_date:
-                raise forms.ValidationError("Date needs to be a future date")
+    """
 
-        return date
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['date'].widget.attrs.update({'class': 'form-control'})
+    class Meta:
+        model = Contact
+        fields = ('name', 'email', 'contact_message')
