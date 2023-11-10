@@ -11,10 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url
 if os.path.isfile('env.py'):
     import env
-
-import dj_database_url
 
 from decouple import config
 from dotenv import load_dotenv
@@ -42,12 +41,10 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-helenahagman-the-persona-6du395rfey.us2.codeanyapp.com',
+    '8000-helenahagman-the-persona-cpf1ej8mg0.us2.codeanyapp.com',
     'ptproject.herokuapp.com',
     'ptproject-ec6a8ad157bf.herokuapp.com',
     'localhost',
-    '8000-helenahagman-the-persona-9mdh98ciyo.us2.codeanyapp.com',
-    '8000-helenahagman-the-persona-e68krmsjua.us2.codeanyapp.com',
 ]
 
 # Application definition
@@ -69,6 +66,14 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'crispy_forms',
 ]
+
+
+# django_summernote configuration
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
+# crispy_forms configuration
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 AUTHENTICATION_BACKENDS = [
@@ -155,8 +160,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
