@@ -37,9 +37,16 @@ class BookingForm(forms.ModelForm):
 
     """
 
-    class Meta:
-        model = Booking
-        fields = ('places_reserved',)
+    class YourForm(forms.Form):
+        name = forms.CharField(label='Name', max_length=100)
+        phonenumber = forms.CharField(label='Phone Number', max_length=15)
+        email = forms.EmailField(label='Email')
+        age = forms.IntegerField(label='Age')
+        gender = forms.ChoiceField(label='Gender', choices=[(
+            'male', 'Male'), ('female', 'Female'), ('other', 'Other')])
+        message = forms.CharField(label='Message', widget=forms.Textarea)
+        date = forms.DateField(label='Date')
+        time = forms.TimeField(label='Time')
 
 
 class ContactForm(forms.ModelForm):
