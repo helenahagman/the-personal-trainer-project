@@ -134,32 +134,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'personaltrainer.wsgi.application'
 
-DATABASE_URL = os.environ.get('DATABASE_URL')
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
-if DATABASE_URL:
-    db_from_env = dj_database_url.config(default=DATABASE_URL)
-    db_from_env['OPTIONS'] = {}
-
-    if '?' in DATABASE_URL:
-        query_params = DATABASE_URL.split('?')[1]
-        db_from_env['OPTIONS']['sslmode'] = 'require'
-        db_from_env['OPTIONS']['sslcompression'] = True
-        db_from_env['OPTIONS']['sslcert'] = '/etc/ssl/certs/ca-certificates.crt'
-        db_from_env['OPTIONS']['sslkey'] = '/etc/ssl/certs/ca-certificates.key'
-        db_from_env['OPTIONS']['sslrootcert'] = '/etc/ssl/certs/ca-certificates.crt'
-        db_from_env['OPTIONS']['ssl_cipher'] = 'HIGH:!aNULL:!MD5'
-
-    DATABASES = {
-        'default': db_from_env
-    }
-else:
-    # If DATABASE_URL is not set, fallback to a default database configuration
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -220,3 +198,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
