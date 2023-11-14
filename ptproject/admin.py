@@ -1,27 +1,43 @@
 from django.contrib import admin
-from .models import Booking, Contact
+from .models import BookingRequest, Contact
 
 
-@admin.register(Booking)
+class ApprovedFilter(admin.SimpleListFilter):
+    title = 'Approved'
+    parameter_name = 'approved'
+
+    def lookups(self, request, model_admin):
+        return (
+            ('approved', 'Approved'),
+            ('not_approved', 'Not Approved'),
+        )
+
+    def queryset(self, request, queryset):
+        if self.value() == 'approved':
+            return queryset.filter(approved=True)
+        elif self.value() == 'not_approved':
+            return queryset.filter(approved=False)
+
+
+@admin.register(BookingRequest)
 class BookingAdmin(admin.ModelAdmin):
     """
     Admin class for the Booking model.
     """
 
-    # Change 'get_session_title' to 'id'
-    list_display = ('id', 'username', 'places_reserved', 'approved')
-    list_display_links = ('username',)
-    list_filter = ('username', 'approved')  
-    search_fields = ('username__username', 'approved')
+    list_display = ('id', 'name', 'phonenumber', 'email', 'age',
+                    'gender', 'message', 'date', 'time', 'approved')
+    search_fields = ('name', 'get_approved')
+    list_filter = ('name', ApprovedFilter)
 
     actions = ['approve_booking', 'unapprove_booking']
 
-    def approve_booking(self, request, queryset):
+    def get_approved(self, obj):
         """
         Admin to approve booking requests.
         """
-
-        queryset.update(approved='approved')
+        return obj.approved
+    get_approved.short_description = 'Request Approved'
 
     def unapprove_booking(self, request, queryset):
         """

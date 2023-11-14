@@ -1,25 +1,27 @@
 from django import forms
 from django.core.validators import MinValueValidator
 from django.utils import timezone
-from .models import Booking, Contact
+from django.contrib.auth.forms import AuthenticationForm
+from .models import BookingRequest, Contact, UserProfile
 
 from django.contrib.auth import get_user_model
-User = get_user_model()
 
 
 class RegistrationForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
-        model = User
+        model = get_user_model()
         fields = ['username', 'email', 'password']
+        widgets = {
+            'password': forms.PasswordInput(),
+        }
 
 
-class LoginForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
+class LoginForm(AuthenticationForm):
 
     class Meta:
-        model = User
+        model = get_user_model()
         fields = ['username', 'email', 'password']
 
 
@@ -31,22 +33,19 @@ class TimeInput(forms.TimeInput):
     input_type = 'time'
 
 
-class BookingForm(forms.ModelForm):
+class BookingRequestForm(forms.ModelForm):
     """
-    A form for booking sessions.
-
+    Form for booking request
     """
+    class Meta:
+        model = BookingRequest
+        fields = ['name', 'phonenumber', 'email',
+                  'age', 'gender', 'message', 'date', 'time']
 
-    class YourForm(forms.Form):
-        name = forms.CharField(label='Name', max_length=100)
-        phonenumber = forms.CharField(label='Phone Number', max_length=15)
-        email = forms.EmailField(label='Email')
-        age = forms.IntegerField(label='Age')
-        gender = forms.ChoiceField(label='Gender', choices=[(
-            'male', 'Male'), ('female', 'Female'), ('other', 'Other')])
-        message = forms.CharField(label='Message', widget=forms.Textarea)
-        date = forms.DateField(label='Date')
-        time = forms.TimeField(label='Time')
+    widgets = {
+        'date': forms.DateInput(attrs={'type': 'date'}),
+        'time': forms.TimeInput(attrs={'type': 'time'}),
+    }
 
 
 class ContactForm(forms.ModelForm):

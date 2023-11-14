@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user
+from django.contrib.auth import login, authenticate, get_user_model
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic.edit import CreateView
@@ -9,8 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.contrib import messages
-from .forms import RegistrationForm, BookingForm, ContactForm
-from .models import Booking, Contact
+from .models import BookingRequest, Contact, UserProfile
+from .forms import BookingRequestForm, ContactForm, RegistrationForm
 
 
 class Home(generic.TemplateView):
@@ -51,13 +51,28 @@ class Register(generic.TemplateView):
     # Opens register page
     template_name = "register.html"
 
+    def post(self, request, *args, **kwargs):
+        form = RegistrationForm(request.POST)
+        if form. is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('success_page')
+        else:
+            messages.error(request, 'Invalid form. Please try again.')
+            return render(request, 'register.html', {'form': form})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = RegistrationForm()
+        return context
+
 
 class Login(generic.TemplateView):
     # Opens login page
     template_name = "login.html"
 
 
-class Contact(CreateView):
+class ContactView(CreateView):
     model = Contact
     form_class = ContactForm
     template_name = "contact.html"
@@ -69,15 +84,15 @@ class Contact(CreateView):
         return context
 
 
-def book_session(request):
+def book_request_view(request):
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingRequestForm(request.POST)
         if form.is_valid():
-            form.save()
-            # Redirect to success page
-            return redirect('success')
+            booking_request = form.save(commit=False)
+            booking_request.save()
+            return redirect('success_page')
     else:
-        form = BookingForm()
+        form = BookingRequestForm()
 
     return render(request, 'book.html', {'form': form})
 
@@ -119,17 +134,17 @@ def home_view(request):
 
 
 class MyBookings(LoginRequiredMixin, View):
-   
+
     def get(self, request, *args, **kwargs):
         user = request.user
         current_time = timezone.now()
 
-        future_bookings = Booking.objects.filter(
-            username=user, session__session_start__gt=current_time
-        ).order_by("session__session_start")
-        past_bookings = Booking.objects.filter(
-            username=user, session__session_start__lte=current_time
-        ).order_by("-session__session_start")
+        future_bookings = BookingRequest.objects.filter(
+            username=user, date__gt=current_time
+        ).order_by("date")
+        past_bookings = BookingRequest.objects.filter(
+            username=user, date__lte=current_time
+        ).order_by("-date")
         return render(
             request,
             "my_bookings.html",
@@ -143,7 +158,7 @@ class MyBookings(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         booking_id = request.POST.get("booking_id")
         if booking_id:
-            booking = Booking.objects.filter(id=booking_id).first()
+            booking = BookingRequest.objects.filter(id=booking_id).first()
 
             if booking and booking.username == request.user:
                 # Cancel booking
@@ -157,68 +172,49 @@ class MyBookings(LoginRequiredMixin, View):
 
 class SessionDetail(View):
     def get(self, request, slug, *args, **kwargs):
-        queryset = Session.objects.filter(status=1)
+        queryset = BookingRequest.objects.filter(approved=True)
         session = get_object_or_404(queryset, slug=slug)
         trainer = session.trainer
-        feedbacks = session.feedbacks.filter(
-            approved=True).order_by("-created_on")
-        user = get_user(request)
+        user = get_user_model()
         has_booking = False
-        liked = False
 
-        booking_form = BookingForm()
+        booking_form = BookingRequestForm()
 
         if user.is_authenticated:
             has_booking = self.user_has_booked(user, session)
-
-        if session.likes.filter(id=user.id).exists():
-            liked = True
 
         return render(
             request,
             "session_detail.html",
             {
                 "session": session,
-                "feedbacks": feedbacks,
                 "trainer": trainer,
-                "submitted_feedback": False,
-                "liked": liked,
                 "has_booking": has_booking,
-                "feedback_form": FeedbackForm(),
                 "booking_form": booking_form,
                 "page_title": session.title,
             },
         )
 
     def post(self, request, slug, *args, **kwargs):
-
-        queryset = Session.objects.filter(status=1)
+        queryset = BookingRequest.objects.filter(approved=True)
         session = get_object_or_404(queryset, slug=slug)
         trainer = session.trainer
-        feedbacks = session.feedbacks.filter(
-            approved=True).order_by("-created_on")
-        liked = False
-        booking_form = BookingForm()
-        user = get_user(request)
-        submitted_feedback = False
+        booking_form = BookingRequestForm()
+        user = get_user_model()
         submitted_booking = False
 
-        if session.likes.filter(id=user.id).exists():
-            liked = True
-
         if user.is_authenticated:
-            
             has_booking = self.user_has_booked(user, session)
             if has_booking:
                 # User has already made a booking, return an error response
                 messages.error(
                     request,
-                    "You have already booked this personal training session!"
+                    "You have already requested a personal training session!"
                     "Please check My Bookings page.",
                 )
             else:
                 if "booking_submit" in request.POST:
-                    booking_form = BookingForm(data=request.POST)
+                    booking_form = BookingRequestForm(data=request.POST)
                     if booking_form.is_valid():
                         booking = booking_form.save(commit=False)
                         booking.session = session
@@ -228,23 +224,22 @@ class SessionDetail(View):
                         messages.success(
                             request, "Thank you for your booking request!")
                     else:
-                        booking_form = BookingForm()
+                        booking_form = BookingRequestForm()
 
         return render(
             request,
             "session_detail.html",
             {
                 "session": session,
-                "feedbacks": feedbacks,
                 "trainer": trainer,
-                "submitted_feedback": submitted_feedback,
                 "submitted_booking": submitted_booking,
-                "liked": liked,
-                "feedback_form": FeedbackForm(),
                 "booking_form": booking_form,
                 "page_title": session.title,
             },
         )
 
     def user_has_booked(self, user, session):
-        return Booking.objects.filter(session=session, username=user).exists()
+        return BookingRequest.objects.filter(
+            session=session,
+            username=user
+            ).exists()

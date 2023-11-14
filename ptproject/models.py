@@ -1,7 +1,6 @@
-from django.utils import timezone
-from django import forms
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils import timezone
 from django.core.validators import MinValueValidator
 from cloudinary.models import CloudinaryField
 
@@ -9,25 +8,26 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class Booking(models.Model):
-    """
-    Model for booking a session.
-    """
-
-    APPROVAL_CHOICES = (
-        ('approved', 'Approved'),
-        ('pending', 'Pending'),
-        ('not_approved', 'Not Approved'),
+class BookingRequest(models.Model):
+    name = models.CharField(max_length=100, default='State your name')
+    phonenumber = models.CharField(max_length=15, default='1234567890')
+    email = models.EmailField(max_length=70, default='your@mail.com')
+    age = models.IntegerField(default='0', validators=[MinValueValidator(0)])
+    gender = models.CharField(
+        max_length=10,
+        choices=[
+            ('male', 'Male'),
+            ('female', 'Female'),
+            ('other', 'Other')
+        ],
+        default='male'
     )
+    message = models.TextField(max_length=300, default='')
+    date = models.DateField()
+    time = models.TimeField()
+    approved = models.BooleanField(default=False)
+    objects = models.Manager()
 
-    username = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='user_bookings')
-    places_reserved = models.IntegerField(validators=[MinValueValidator(1), ])
-    approved = models.CharField(
-        max_length=12, choices=APPROVAL_CHOICES, default='pending')
-
-    def __str__(self):
-        return f'{self.id} is booked by {self.username}'
 
 class Contact(models.Model):
     """
@@ -51,20 +51,10 @@ class Contact(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True, blank=True)
+    email = models.EmailField(unique=True, default='default@example.com')
 
-
-class RegistrationForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password']
-        widgets = {
-            'password': forms.PasswordInput(),
-        }
-
-
-class DateInput(forms.DateInput):
-    input_type = 'date'
-
-
-class TimeInput(forms.TimeInput):
-    input_type = 'time'
+    def __str__(self):
+        if self.user and hasattr(self.user, 'username'):
+            return self.user.username
+        else:
+            return f"UserProfile without associated User ({self.pk})"
