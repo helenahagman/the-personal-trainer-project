@@ -3,14 +3,14 @@ from django.core.validators import MinValueValidator
 from django.utils import timezone
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .models import BookingRequest, Contact, UserProfile
-from django.contrib.auth import get_user_model, user
+from django.contrib.auth import get_user_model
 
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField()
 
     class Meta:
-        model = User
+        model = UserProfile
         fields = ['username', 'email', 'password1', 'password2']
 
 
