@@ -67,9 +67,24 @@ def register(request):
     return render(request, 'register.html', context)
 
 
-class Login(generic.TemplateView):
-    # Opens login page
-    template_name = "login.html"
+def log_in(request):
+    """
+    To render the login in view.
+    """
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('index')
+    else:
+        form = AuthenticationForm()
+    
+    context = {
+        'title': 'Login',
+        'form' : form,
+    }
+    return render(request, 'login.html', context)
 
 
 class ContactView(CreateView):

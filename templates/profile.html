@@ -19,12 +19,13 @@
             </div>
             <table class="profile-table">
                 {% csrf_token %}
-                <thead>
-                    <tr>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email Address</th>
-                    </tr>
-                </thead>
+                <div class="card-body pl-5">
+                    <p><span class="fw-bold">Username:</span> {{ user.username }}</p>
+                    <p><span class="fw-bold">Email:</span> {{ user.email }}</p>
+                    <p><span class="fw-bold">First Name:</span> {{ user.profile.first_name_profile }}</p>
+                    <p><span class="fw-bold">Last Name:</span> {{ user.profile.last_name_profile }}</p>
+                    <p><span class="fw-bold">Phone:</span> {{ user.profile.phone_number }}</p>
+                </div>
                 <tbody class="table-group-divider">
                     <tr>
                         <td>{{ user.username }}</td>
