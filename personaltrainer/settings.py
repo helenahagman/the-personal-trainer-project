@@ -35,10 +35,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if 'DEVELOPMENT' in os.environ and os.environ['DEVELOPMENT'].lower() == 'true':
-    DEBUG = True
-else:
-    DEBUG = False
+# if 'DEVELOPMENT' in os.environ and os.environ['DEVELOPMENT'].lower() == 'true':
+#    DEBUG = True
+# else:
+#    DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-helenahagman-the-persona-cpf1ej8mg0.us2.codeanyapp.com',

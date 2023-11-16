@@ -47,24 +47,24 @@ class ProfileView(generic.TemplateView):
         return super().dispatch(*args, **kwargs)
 
 
-class Register(generic.TemplateView):
-    # Opens register page
-    template_name = "register.html"
-
-    def post(self, request, *args, **kwargs):
+def register(request):
+    """
+    To render the registration view.
+    """
+    if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        if form. is_valid():
+        if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('success_page')
-        else:
-            messages.error(request, 'Invalid form. Please try again.')
-            return render(request, 'register.html', {'form': form})
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = RegistrationForm()
-        return context
+            return redirect('index')
+    else:
+        form = RegistrationForm()
+    
+    context = {
+        'title': 'Register',
+        'form': form,
+    }
+    return render(request, 'register.html', context)
 
 
 class Login(generic.TemplateView):
